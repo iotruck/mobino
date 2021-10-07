@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mobino</string>
+    <string name="title_name">IOTRUCK</string>
+    <string name="btn_entrar">ENTRAR</string>
+    <string name="stg_motoristas">MOTORISTAS</string>
+    <string name="ht_senha">SENHA</string>
+    <string name="ht_email">E-MAIL</string>
+</resources>
