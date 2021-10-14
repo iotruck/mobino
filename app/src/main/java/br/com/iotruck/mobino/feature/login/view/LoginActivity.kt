@@ -1,7 +1,8 @@
-package br.com.iotruck.mobino
+package br.com.iotruck.mobino.feature.login.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import br.com.iotruck.mobino.R
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
