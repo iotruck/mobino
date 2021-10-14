@@ -19,8 +19,8 @@ class TruckerService {
                 }
 
                 override fun onResponse(call: Call<Trucker>, response: Response<Trucker>) {
-                    val addedUser = response.body()
-                    onResult(addedUser)
+                    val trucker = response.body()
+                    onResult(trucker)
                 }
             }
         )
