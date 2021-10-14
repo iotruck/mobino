@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobino">
         <activity
-            android:name=".LoginActivity"
+            android:name=".feature.login.view.LoginActivity"
             android:exported="true">
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".feature.main.view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
