@@ -25,19 +25,24 @@ class LoginActivity : AppCompatActivity() {
         if (!etLogin.text.toString().isEmpty() && !etPassword.text.toString().isEmpty()) {
 
             val truckerLogin = TruckerLogin(
-                email = etLogin.text.toString(),
-                password = etPassword.text.toString()
+
+                email = etLogin.text.toString().trim(),
+                password = etPassword.text.toString().trim()
             )
 
             apiService.login(truckerLogin) {
                 if (it?.id != null) {
+                    println(it)
                     startActivity(Intent(this, MainActivity::class.java))
+                    Toast.makeText(this, "LOGOU", Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(this, "O usuario é invalido", Toast.LENGTH_SHORT).show()
                 }
             }
         } else {
+
             Toast.makeText(this, "Preencha os campos corretamete", Toast.LENGTH_SHORT).show()
+
         }
     }
 }

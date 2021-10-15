@@ -1,5 +1,6 @@
 package br.com.iotruck.mobino.feature.login.services
 
+import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -10,10 +11,15 @@ import br.com.iotruck.mobino.feature.login.services.interfaces.TruckerServiceInt
 
 
 class TruckerService {
+
     fun login(truckerLogin: TruckerLogin, onResult: (Trucker?) -> Unit) {
+
         val retrofit = ServiceBuilder.buildServices(TruckerServiceInterface::class.java)
+
         retrofit.login(truckerLogin).enqueue(
+
             object : Callback<Trucker> {
+
                 override fun onFailure(call: Call<Trucker>, t: Throwable) {
                     onResult(null)
                 }
@@ -25,4 +31,5 @@ class TruckerService {
             }
         )
     }
+
 }
