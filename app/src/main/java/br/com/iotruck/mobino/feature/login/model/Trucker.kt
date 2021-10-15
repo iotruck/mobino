@@ -13,7 +13,7 @@ data class Trucker(
     @SerializedName("cnh")
     var cnh: String,
     @SerializedName("birthDate")
-    var birthDate: LocalDate,
+    var birthDate: String,
     @SerializedName("phoneNumber")
     var phoneNumber: String
 )
