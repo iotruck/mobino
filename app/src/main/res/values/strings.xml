@@ -5,4 +5,11 @@
     <string name="stg_motoristas">MOTORISTAS</string>
     <string name="ht_senha">SENHA</string>
     <string name="ht_email">E-MAIL</string>
+    <string name="tv_retomar_viagem">Retomar viagem</string>
+    <string name="tv_bem_vindo">Bem vindo,</string>
+    <string name="tv_opces">OPÇÕES</string>
+    <string name="tv_sua_conta">Sua conta</string>
+    <string name="tv_caminhoes">Caminhões</string>
+    <string name="tv_viagens">Viagens</string>
+    <string name="tv_proxima_viagem">PRÓXIMA VIAGEM</string>
 </resources>
