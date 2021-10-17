@@ -7,9 +7,10 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.iotruck.mobino.R
+import br.com.iotruck.mobino.feature.home.view.HomeActivity
 import br.com.iotruck.mobino.feature.login.model.TruckerLogin
 import br.com.iotruck.mobino.feature.login.services.TruckerService
-import br.com.iotruck.mobino.feature.main.view.MainActivity
+
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,8 +34,7 @@ class LoginActivity : AppCompatActivity() {
             apiService.login(truckerLogin) {
                 if (it?.id != null) {
                     println(it)
-                    startActivity(Intent(this, MainActivity::class.java))
-                    Toast.makeText(this, "LOGOU", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this, HomeActivity::class.java))
                 } else {
                     Toast.makeText(this, "O usuario é invalido", Toast.LENGTH_SHORT).show()
                 }
