@@ -4,71 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".feature.main.view.MainActivity">
 
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:orientation="vertical"
-       android:background="#F3F3F3">
+       android:background="#F3F3F3"
+       android:id="@+id/ly_background">
 
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical"
-           android:id="@+id/ly_back">
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_margin="10dp"
                 android:src="@mipmap/backarrow"
-                android:id="@+id/back"
+                android:id="@+id/iv_back"
                 />
-       </LinearLayout>
 
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="90dp"
            android:orientation="vertical"
            android:layout_gravity="center"
-           android:layout_marginTop="20dp">
+           android:layout_marginTop="20dp"
+           android:id="@+id/ly_header">
+
 
            <LinearLayout
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:orientation="horizontal"
-               android:layout_gravity="center">
+               android:layout_gravity="center"
+               android:id="@+id/ly_textHeader">
 
                <ImageView
                    android:layout_width="35dp"
                    android:layout_height="35dp"
                    android:layout_gravity="center"
                    android:layout_marginTop="2dp"
-                   android:src="@mipmap/truckdriver" />
+                   android:src="@mipmap/truckdriver"
+                   android:id="@+id/iv_truckdriver"/>
 
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="Suas Viagens"
+                   android:text="Suas viagens"
                    android:textColor="#2D2D2D"
                    android:textAlignment="center"
                    android:layout_marginLeft="05dp"
                    android:textSize="40sp"
-                   android:textFontWeight="700"/>
+                   android:fontWeight="700"
+                   android:id="@+id/tv_headerTitle"/>
            </LinearLayout>
 
            <LinearLayout
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:orientation="horizontal"
-               android:layout_gravity="center">
+               android:layout_gravity="center"
+               android:id="@+id/ly_subtitleHeader">
 
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_marginTop="6dp"
                    android:text="Programação agendada para você"
-                   android:textSize="16sp"/>
+                   android:textSize="16sp"
+                   android:id="@+id/tv_subtitle"/>
 
            </LinearLayout>
 
@@ -85,7 +87,8 @@
                  android:layout_width="30dp"
                  android:layout_height="25dp"
                  android:src="@mipmap/relogio"
-                 android:layout_marginLeft="25dp"/>
+                 android:layout_marginLeft="25dp"
+                 android:id="@+id/iv_clock"/>
 
            <TextView
                android:layout_width="wrap_content"
@@ -93,7 +96,8 @@
                android:text="HOJE"
                android:textSize="20sp"
                android:textColor="#F55100"
-               android:layout_marginLeft="10dp"/>
+               android:layout_marginLeft="10dp"
+               android:id="@+id/tv_today"/>
 
            </LinearLayout>
 
@@ -103,7 +107,8 @@
            android:layout_height="wrap_content"
            android:layout_marginTop="20dp"
            android:orientation="vertical"
-           android:gravity="center">
+           android:gravity="center"
+           android:id="@+id/ly_todayCards">
 
 
                <LinearLayout
@@ -111,12 +116,13 @@
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
                    android:background="@drawable/card_travels"
-                   >
+                   android:id="@+id/ly_cardTravels">
 
                   <LinearLayout
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
-                      android:orientation="vertical">
+                      android:orientation="vertical"
+                      android:id="@+id/ly_travelContent">
 
                       <TextView
                           android:layout_width="wrap_content"
@@ -131,7 +137,9 @@
                       <LinearLayout
                           android:layout_width="match_parent"
                           android:layout_height="wrap_content"
-                          android:orientation="horizontal">
+                          android:orientation="horizontal"
+                          android:id="@+id/ly_firstLine">
+
                           <TextView
                               android:layout_width="wrap_content"
                               android:layout_height="wrap_content"
@@ -154,7 +162,9 @@
                       <LinearLayout
                           android:layout_width="match_parent"
                           android:layout_height="wrap_content"
-                          android:orientation="horizontal">
+                          android:orientation="horizontal"
+                          android:id="@+id/ly_secondLine">
+
                           <TextView
                               android:layout_width="wrap_content"
                               android:layout_height="wrap_content"
@@ -173,12 +183,14 @@
                               android:padding="6dp"/>
 
                       </LinearLayout>
+
                       <ImageView
                           android:layout_width="40dp"
                           android:layout_height="40dp"
                           android:src="@mipmap/play"
                           android:layout_gravity="right"/>
-                  </LinearLayout>
+
+                  </LinearLayout> <!--fim card-->
 
                </LinearLayout>
 
@@ -289,9 +301,7 @@
 
            </LinearLayout>
 
-
-
-           </LinearLayout>
+   </LinearLayout>
 
 
 
