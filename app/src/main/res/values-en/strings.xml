@@ -6,4 +6,11 @@
     <string name="stg_motoristas">TRUCKERS</string>
     <string name="ht_senha">PASSWORD</string>
     <string name="ht_email">E-MAIL</string>
+    <string name="tv_retomar_viagem">Return travel</string>
+    <string name="tv_bem_vindo">Welcome,</string>
+    <string name="tv_opces">OPTIONS</string>
+    <string name="tv_sua_conta">Your profile</string>
+    <string name="tv_caminhoes">Trucks</string>
+    <string name="tv_viagens">Travels</string>
+    <string name="tv_proxima_viagem">NEXT TRAVEL</string>
 </resources>

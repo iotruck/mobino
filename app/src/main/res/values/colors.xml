@@ -3,7 +3,7 @@
     <color name="orange_default">#F24E1E</color>
     <color name="blue_default">#010A2C</color>
     <color name="orange_outline">#F55100</color>
-    <color name="gray_default">#9B9B9B</color>
+    <color name="gray_default">#F3F3F3</color>
     <color name="white_default">#FFFFFF</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
@@ -12,4 +12,5 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
 </resources>

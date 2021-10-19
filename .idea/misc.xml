@@ -11,6 +11,12 @@
         <entry key="..\:/Users/Cliente/Desktop/arquivos temporarios/programas/Projeto Iotruck/mobino/app/src/main/res/layout/activity_login.xml" value="0.4509132420091324" />
         <entry key="..\:/Users/Cliente/Desktop/arquivos temporarios/programas/Projeto Iotruck/mobino/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/Cliente/Desktop/arquivos temporarios/programas/Projeto Iotruck/mobino/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3828125" />
+        <entry key="..\:/Users/josel/Documents/mobino/app/src/main/res/drawable/button.xml" value="0.28055555555555556" />
+        <entry key="..\:/Users/josel/Documents/mobino/app/src/main/res/drawable/card_blue.xml" value="0.28055555555555556" />
+        <entry key="..\:/Users/josel/Documents/mobino/app/src/main/res/drawable/card_option.xml" value="0.28055555555555556" />
+        <entry key="..\:/Users/josel/Documents/mobino/app/src/main/res/drawable/card_travel.xml" value="0.28055555555555556" />
+        <entry key="..\:/Users/josel/Documents/mobino/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/josel/Documents/mobino/app/src/main/res/layout/activity_login.xml" value="0.2046875" />
         <entry key="app/src/main/res/drawable/btn_login.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/input_login.xml" value="0.2125" />
@@ -19,7 +25,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
