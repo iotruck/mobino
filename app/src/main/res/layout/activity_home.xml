@@ -134,6 +134,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:onClick="goToAccount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/card_option">
@@ -192,6 +193,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:onClick="goToTravels"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/card_option">
