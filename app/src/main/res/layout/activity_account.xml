@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.account.view.AccountActivity">
+
+    <LinearLayout
+        android:id="@+id/ly_backgroundAccount"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#010A2C"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ly_headerAccount"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:onClick="goToHome"
+                android:src="@mipmap/backarrow" />
+
+
+            <ImageView
+                android:id="@+id/iv_truckdriver"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:src="@mipmap/truckdriverwhite" />
+
+            <LinearLayout
+                android:id="@+id/ly_textHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_headerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="05dp"
+                    android:fontWeight="700"
+                    android:text="Seus dados"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/painel_account"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="E-mail :"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_emailAccount"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/input_account"
+                android:hint="@string/ht_email"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Nome :"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_nameAccount"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/input_account"
+                android:hint="NOME"
+                android:inputType="text"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Data de nascimento :"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_birthAccount"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/input_account"
+                android:hint="NASCIMENTO"
+                android:inputType="date"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CNH :"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_liscenceAccount"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/input_account"
+                android:hint="0000000"
+                android:inputType="number"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CPF :"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_cpfAccount"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/input_account"
+                android:hint="000000000-00"
+                android:inputType="number"
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
