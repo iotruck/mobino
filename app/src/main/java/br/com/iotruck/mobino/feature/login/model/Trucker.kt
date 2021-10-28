@@ -1,7 +1,7 @@
 package br.com.iotruck.mobino.feature.login.model
 
 import com.google.gson.annotations.SerializedName
-import java.time.LocalDate
+import java.io.Serializable
 
 data class Trucker(
     @SerializedName("id")
@@ -16,4 +16,4 @@ data class Trucker(
     var birthDate: String,
     @SerializedName("phoneNumber")
     var phoneNumber: String
-)
+) : Serializable
