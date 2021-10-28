@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.schedule.view.ScheduleActivity">
+
+    <LinearLayout
+        android:id="@+id/ly_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F3F3F3"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:onClick="goToHome"
+            android:src="@mipmap/backarrow" />
+
+        <LinearLayout
+            android:id="@+id/ly_header"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ly_textHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_truckdriver"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:src="@mipmap/truckdriver" />
+
+                <TextView
+                    android:id="@+id/tv_headerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="05dp"
+                    android:fontWeight="700"
+                    android:text="Suas viagens"
+                    android:textAlignment="center"
+                    android:textColor="#2D2D2D"
+                    android:textSize="40sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_subtitleHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Programação agendada para você"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly_hoje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_clock"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="25dp"
+                android:src="@mipmap/relogio" />
+
+            <TextView
+                android:id="@+id/tv_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="HOJE"
+                android:textColor="#F55100"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ly_todayCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ly_cardTravels"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/card_travels">
+
+                <LinearLayout
+                    android:id="@+id/ly_travelContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="10dp"
+                        android:text="FJ0093764"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ly_firstLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:padding="3dp"
+                            android:text="ANALISTAS:"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="6dp"
+                            android:text="Sandra Cunha, Paulo Alberto"
+                            android:textColor="#B0B7E4" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_secondLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:padding="3dp"
+                            android:text="DESTINO:"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="6dp"
+                            android:text="Av. Sabugo de milho, 447 - Centro, São Paulo/SP - 02345-9683 "
+                            android:textColor="#B0B7E4" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="right"
+                        android:src="@mipmap/play" />
+
+                </LinearLayout> <!--fim card-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="25dp"
+                android:src="@mipmap/agenda" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text=" AGENDA"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly_futureCard"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/card_schedule">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    android:text="NHFF6543"
+                    android:textColor="#010A2C"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:padding="3dp"
+                        android:text="ANALISTAS:"
+                        android:textColor="#010A2C"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_analystName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="Sandra Cunha, Paulo Alberto"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:padding="3dp"
+                        android:text="DESTINO:"
+                        android:textColor="#010A2C"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_destinyName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="Av. Sabugo de milho, 447 - Centro, São Paulo/SP - 02345-9683 "
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:text="08/10"
+                    android:textColor="#010A2C"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
