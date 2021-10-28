@@ -1,13 +1,12 @@
 package br.com.iotruck.mobino.feature.login.view
 
-import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.iotruck.mobino.R
-import br.com.iotruck.mobino.feature.home.view.HomeActivity
 import br.com.iotruck.mobino.feature.login.model.TruckerLogin
 import br.com.iotruck.mobino.feature.login.services.TruckerService
 
@@ -31,13 +30,19 @@ class LoginActivity : AppCompatActivity() {
                 password = etPassword.text.toString().trim()
             )
 
-            apiService.login(truckerLogin) {
-                if (it?.id != null) {
-                    println(it)
-                    startActivity(Intent(this, HomeActivity::class.java))
-                } else {
-                    Toast.makeText(this, "O usuario é invalido", Toast.LENGTH_SHORT).show()
-                }
+            try {
+
+                apiService.login(truckerLogin, this)
+
+            } catch (e: Exception) {
+
+                Toast.makeText(
+                    this,
+                    "Erro de login, algo inesperado aconteceu, tente novamente!",
+                    Toast.LENGTH_SHORT
+                ).show()
+                Log.e("LoginError", "Erro ao executar o login - throwable: ${e.message}")
+
             }
         } else {
 
