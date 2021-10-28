@@ -9,6 +9,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import br.com.iotruck.mobino.commons.builder.ServiceBuilder
+import br.com.iotruck.mobino.commons.network.NetworkStatus
 import br.com.iotruck.mobino.feature.home.view.HomeActivity
 import br.com.iotruck.mobino.feature.login.model.Trucker
 import br.com.iotruck.mobino.feature.login.model.TruckerLogin
@@ -21,28 +22,37 @@ class TruckerService {
 
     fun login(truckerLogin: TruckerLogin, pakageContext: Context) {
 
-        retrofit.login(truckerLogin).enqueue(
+        if(NetworkStatus.isConnected(pakageContext)){
 
-            object : Callback<Trucker> {
+            retrofit.login(truckerLogin).enqueue(
 
-                override fun onResponse(call: Call<Trucker>, response: Response<Trucker>) {
+                object : Callback<Trucker> {
 
-                    if (response.isSuccessful) {
-                        val redirect = Intent(pakageContext, HomeActivity::class.java)
-                        redirect.putExtra("truckerInfo", response.body())
-                        startActivity(pakageContext, redirect, null)
-                    } else {
-                        Log.e(
-                            "LoginError",
-                            "Erro ao executar o login - status: ${response.code()} errorBody: ${response.errorBody()} message: ${response.message()}"
-                        )
-                        Toast.makeText(pakageContext, "Usuario ou senhas invalidos, tente novamente", Toast.LENGTH_SHORT).show()
+                    override fun onResponse(call: Call<Trucker>, response: Response<Trucker>) {
+
+                        if (response.isSuccessful) {
+                            val redirect = Intent(pakageContext, HomeActivity::class.java)
+                            redirect.putExtra("truckerInfo", response.body())
+                            startActivity(pakageContext, redirect, null)
+                        } else {
+                            Log.e(
+                                "LoginError",
+                                "Erro ao executar o login - status: ${response.code()} errorBody: ${response.errorBody()} message: ${response.message()}"
+                            )
+                            Toast.makeText(pakageContext, "Usuario ou senhas invalidos, tente novamente", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    override fun onFailure(call: Call<Trucker>, t: Throwable) {
+                        throw Exception("message ${t.message}")
                     }
                 }
-                override fun onFailure(call: Call<Trucker>, t: Throwable) {
-                    throw Exception("message ${t.message}")
-                }
-            }
-        )
+            )
+
+        }else{
+
+            Toast.makeText(pakageContext, "Não há conexão com a internet", Toast.LENGTH_SHORT).show()
+
+        }
+
     }
 }
