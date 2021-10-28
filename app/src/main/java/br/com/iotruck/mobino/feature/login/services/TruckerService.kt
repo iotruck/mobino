@@ -3,6 +3,7 @@ package br.com.iotruck.mobino.feature.login.services
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -35,6 +36,7 @@ class TruckerService {
                             "LoginError",
                             "Erro ao executar o login - status: ${response.code()} errorBody: ${response.errorBody()} message: ${response.message()}"
                         )
+                        Toast.makeText(pakageContext, "Usuario ou senhas invalidos, tente novamente", Toast.LENGTH_SHORT).show()
                     }
                 }
                 override fun onFailure(call: Call<Trucker>, t: Throwable) {

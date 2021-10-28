@@ -1,6 +1,8 @@
 package br.com.iotruck.mobino.feature.login.view
 
-import android.content.Intent
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,7 +10,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.iotruck.mobino.R
-import br.com.iotruck.mobino.feature.home.view.HomeActivity
+import br.com.iotruck.mobino.commons.network.NetWorkStatus
 import br.com.iotruck.mobino.feature.login.model.TruckerLogin
 import br.com.iotruck.mobino.feature.login.services.TruckerService
 
@@ -33,8 +35,11 @@ class LoginActivity : AppCompatActivity() {
             )
 
             try {
-
-                apiService.login(truckerLogin,this)
+                if(NetWorkStatus.isConnected(this)){
+                    apiService.login(truckerLogin,this)
+                }else{
+                    Toast.makeText(this, "Não há conexão com a internet", Toast.LENGTH_SHORT).show()
+                }
 
             } catch (e: Exception) {
 
