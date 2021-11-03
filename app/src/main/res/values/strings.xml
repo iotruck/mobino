@@ -12,4 +12,7 @@
     <string name="tv_caminhoes">Caminhões</string>
     <string name="tv_viagens">Viagens</string>
     <string name="tv_proxima_viagem">PRÓXIMA VIAGEM</string>
+    <string name="title_activity_schedule_ractivity">ScheduleRActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
