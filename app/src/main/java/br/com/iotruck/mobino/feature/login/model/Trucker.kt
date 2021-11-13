@@ -16,4 +16,12 @@ data class Trucker(
     var birthDate: String,
     @SerializedName("phoneNumber")
     var phoneNumber: String
-) : Serializable
+) : Serializable{
+
+    companion object {
+        fun createDefaultTrucker(): Trucker{
+            return Trucker(0,"","","","","")
+        }
+    }
+
+}

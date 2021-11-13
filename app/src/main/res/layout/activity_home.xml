@@ -35,7 +35,6 @@
                     android:id="@+id/tv_trucker_name"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
-                    android:text="Waldesio Pereira"
                     android:textColor="@color/orange_default"
                     android:textSize="26sp"
                     android:textStyle="bold" />
