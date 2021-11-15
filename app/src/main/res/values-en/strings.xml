@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Mobino</string>
+    <string name="user_name">Waldesio Pereira</string>
     <string name="btn_entrar">LOGIN</string>
     <string name="title_name">IOTRUCK</string>
     <string name="stg_motoristas">TRUCKERS</string>
