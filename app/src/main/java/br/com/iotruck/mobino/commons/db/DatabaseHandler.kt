@@ -12,7 +12,7 @@ class DatabaseHandler(ctx: Context) : SQLiteOpenHelper(ctx, DB_NAME, null, DB_VE
 
     override fun onCreate(db: SQLiteDatabase?) {
         val CREATE_TABLE =
-            "CREATE TABLE $TABLE_NAME ($ID INTEGER PRIMARY KEY, $NAME TEXT, $CPF TEXT, $CNH TEXT, " +
+            "CREATE TABLE $TABLE_NAME ($ID INTEGER PRIMARY KEY, $NAME TEXT, $EMAIL TEXT, $CPF TEXT, $CNH TEXT, " +
                     "$BIRTHDATE TEXT, $PHONENUMBER TEXT);"
         db?.execSQL(CREATE_TABLE)
     }
@@ -52,11 +52,10 @@ class DatabaseHandler(ctx: Context) : SQLiteOpenHelper(ctx, DB_NAME, null, DB_VE
         }
 
         fun addTrucker(trucker: Trucker): Boolean {
-
-
             val values = ContentValues()
             values.put(ID, trucker.id)
             values.put(NAME, trucker.name)
+            values.put(EMAIL, trucker.email)
             values.put(CPF, trucker.cpf)
             values.put(CNH, trucker.cnh)
             values.put(BIRTHDATE, trucker.birthDate)
@@ -76,6 +75,7 @@ class DatabaseHandler(ctx: Context) : SQLiteOpenHelper(ctx, DB_NAME, null, DB_VE
                         val trucker = Trucker.createDefaultTrucker()
                         trucker.id = cursor.getInt(cursor.getColumnIndex(ID))
                         trucker.name = cursor.getString(cursor.getColumnIndex(NAME))
+                        trucker.email = cursor.getString(cursor.getColumnIndex(EMAIL))
                         trucker.cpf = cursor.getString(cursor.getColumnIndex(CPF))
                         trucker.cnh = cursor.getString(cursor.getColumnIndex(CNH))
                         trucker.birthDate = cursor.getString(cursor.getColumnIndex(BIRTHDATE))
@@ -97,6 +97,7 @@ class DatabaseHandler(ctx: Context) : SQLiteOpenHelper(ctx, DB_NAME, null, DB_VE
         private val TABLE_NAME = "Trucker"
         private val ID = "id"
         private val NAME = "Name"
+        private val EMAIL = "Email"
         private val CPF = "Cpf"
         private val CNH = "Cnh"
         private val BIRTHDATE = "Birthdate"

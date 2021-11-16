@@ -8,6 +8,8 @@ data class Trucker(
     var id: Int,
     @SerializedName("name")
     var name: String,
+    @SerializedName("email")
+    var email: String,
     @SerializedName("cpf")
     var cpf: String,
     @SerializedName("cnh")
@@ -20,7 +22,7 @@ data class Trucker(
 
     companion object {
         fun createDefaultTrucker(): Trucker{
-            return Trucker(0,"","","","","")
+            return Trucker(0,"","","","","","")
         }
     }
 
