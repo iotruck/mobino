@@ -97,8 +97,7 @@
                 app:layout_constraintTop_toTopOf="@id/container_content"
                 android:layout_marginLeft="10dp"
                 />
-
-
+            
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/container_today_cards"
                 android:layout_width="0dp"
