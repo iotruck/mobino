@@ -4,8 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
-import android.widget.EditText
 import android.widget.TextView
 import br.com.iotruck.mobino.R
 import br.com.iotruck.mobino.commons.db.DatabaseHandler
@@ -40,4 +40,7 @@ class HomeActivity() : AppCompatActivity() {
     fun goToTravels(v: View) {
         startActivity(Intent(this, ScheduleActivity::class.java))
     }
+
+
 }
+
