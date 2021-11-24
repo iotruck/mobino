@@ -1,58 +1,54 @@
 package br.com.iotruck.mobino.feature.schedule.services
 
-import android.app.usage.NetworkStats
 import android.content.Context
-import android.net.Network
 import android.util.Log
-import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import br.com.iotruck.mobino.commons.builder.ServiceBuilder
 import br.com.iotruck.mobino.commons.network.NetworkStatus
 import br.com.iotruck.mobino.feature.login.model.Trucker
+import br.com.iotruck.mobino.feature.schedule.adapter.Adapter
 import br.com.iotruck.mobino.feature.schedule.model.Travel
 import br.com.iotruck.mobino.feature.schedule.services.interfaces.TravelServiceInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.Exception
 
 
 class TravelService {
 
     private val retrofit = ServiceBuilder.buildServices(TravelServiceInterface::class.java)
-    lateinit var travelList : MutableList<Travel>
 
-    fun getTravels(trucker : Trucker ,packgeContext : Context) : List<Travel>{
+    fun getTravels(travels:MutableList<Travel>,trucker : Trucker ,newRecyclerView : RecyclerView,
+                   packgeContext : Context) {
 
         if (NetworkStatus.isConnected(packgeContext)){
             retrofit.getTravels(trucker.id).enqueue(
 
-                object : Callback<List<Travel>> {
+                object : Callback<MutableList<Travel>> {
 
-                    override fun onResponse(call: Call<List<Travel>>,response: Response<List<Travel>>){
+                    override fun onResponse(call: Call<MutableList<Travel>>,response: Response<MutableList<Travel>>){
 
                         if (response.isSuccessful){
-                            travelList = response.body() as MutableList<Travel>
+                            travels.addAll(response.body() as MutableList<Travel>)
+                            newRecyclerView.adapter = Adapter(travels)
+                            newRecyclerView.layoutManager = LinearLayoutManager(packgeContext)
                         }else {
                             Log.e(
                                 "ListError",
                                 "Erro ao executar get Travel - status: ${response.code()} errorBody:" +
                                         " ${response.errorBody()} message: ${response.message()}"
                             )
-
-                            travelList = mutableListOf()
-
                         }
                     }
 
-                    override fun onFailure(call: Call<List<Travel>>, t: Throwable) {
+                    override fun onFailure(call: Call<MutableList<Travel>>, t: Throwable) {
                         throw Exception("message ${t.message}")
-                        travelList = mutableListOf()
                     }
                 }
 
             )
         }
 
-       return travelList
     }
 }

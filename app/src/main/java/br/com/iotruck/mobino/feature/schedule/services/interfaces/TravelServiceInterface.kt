@@ -9,5 +9,5 @@ interface TravelServiceInterface {
 
     @Headers("Content-Type: application/json")
     @GET("travel/trucker/{id}")
-    fun getTravels(@Path("id") id : Int): Call<List<Travel>>
+    fun getTravels(@Path("id") id : Int): Call<MutableList<Travel>>
 }

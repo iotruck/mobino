@@ -5,22 +5,20 @@ import com.google.gson.annotations.SerializedName
 import java.time.LocalDate
 
 data class Travel(
-    @SerializedName("Id")
+    @SerializedName("id")
     var id : Int,
-    @SerializedName("Analyst")
+    @SerializedName("analyst")
     var analyst : Analyst,
-    @SerializedName("Code")
+    @SerializedName("codigo")
     var code : String,
-    @SerializedName("Current_Truck_Position")
+    @SerializedName("currentTruckPosition")
     var currentTruckPosition : Location,
-    @SerializedName("Date_Travel")
-    var dateTravel : LocalDate,
-    @SerializedName("Description")
+    @SerializedName("dateTravel")
+    var dateTravel : String,
+    @SerializedName("description")
     var description : String,
-    @SerializedName("Destiny")
+    @SerializedName("destiny")
     var destiny : Location,
-    @SerializedName("Estimated_Value")
-    var estimatedValue : Double,
     @SerializedName("Status")
     var status : String,
     @SerializedName("Truck")

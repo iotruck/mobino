@@ -19,28 +19,20 @@ class ScheduleActivity : AppCompatActivity() {
     val apiService = TravelService()
     val trucker : Trucker = DatabaseHandler.getAllTrucker().get(0)
     private lateinit var newRecyclerView: RecyclerView
-    private lateinit var newArrayList: ArrayList<Travel>
-    lateinit var travels : List<Travel>
+    var travels : MutableList<Travel> = mutableListOf()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_schedule)
 
-
-        travels = apiService.getTravels(trucker, this)
-
         newRecyclerView = findViewById(R.id.recyclerView)
-        newRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        apiService.getTravels(travels,trucker, newRecyclerView, this)
         newRecyclerView.setHasFixedSize(true)
 
-        newArrayList = arrayListOf<Travel>()
-        getTravelData()
     }
 
-    private fun getTravelData() {
-       newRecyclerView.adapter = Adapter(travels)
-    }
 
     fun goToHome(v: View){
         startActivity(Intent(this, HomeActivity::class.java))
