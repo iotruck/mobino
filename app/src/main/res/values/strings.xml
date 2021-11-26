@@ -12,4 +12,6 @@
     <string name="tv_caminhoes">Caminhões</string>
     <string name="tv_viagens">Viagens</string>
     <string name="tv_proxima_viagem">PRÓXIMA VIAGEM</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="tv_entrar_contato">Entraremos em contato com</string>
 </resources>
