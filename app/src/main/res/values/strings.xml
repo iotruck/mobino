@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Mobino</string>
+    <string name="user_name">Waldesio Pereira</string>
     <string name="title_name">IOTRUCK</string>
     <string name="btn_entrar">ENTRAR</string>
     <string name="stg_motoristas">MOTORISTAS</string>
@@ -14,4 +15,7 @@
     <string name="tv_proxima_viagem">PRÓXIMA VIAGEM</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="tv_entrar_contato">Entraremos em contato com</string>
+    <string name="title_activity_schedule_ractivity">ScheduleRActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

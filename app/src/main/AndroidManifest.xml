@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -28,6 +29,23 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+            android:name=".ScheduleRActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/title_activity_schedule_ractivity"
+            android:theme="@style/AppTheme.Fullscreen" />
+        <activity
+            android:name=".feature.schedule.view.ScheduleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".feature.account.view.AccountActivity"
+            android:exported="true" />
+        <activity
+            android:name=".feature.home.view.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.login.view.LoginActivity"
+            android:exported="true" />
         <activity
             android:name=".feature.maps.view.MapsActivity"
             android:exported="true"

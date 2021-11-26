@@ -35,7 +35,6 @@
                     android:id="@+id/tv_trucker_name"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
-                    android:text="Waldesio Pereira"
                     android:textColor="@color/orange_default"
                     android:textSize="26sp"
                     android:textStyle="bold" />
@@ -134,6 +133,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:onClick="goToAccount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/card_option">
@@ -192,6 +192,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:onClick="goToTravels"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/card_option">
