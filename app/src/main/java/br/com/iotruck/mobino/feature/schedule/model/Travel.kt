@@ -19,10 +19,8 @@ data class Travel(
     var description : String,
     @SerializedName("destiny")
     var destiny : Location,
-    @SerializedName("Status")
-    var status : String,
-    @SerializedName("Truck")
+    @SerializedName("truck")
     var truck: Truck,
-    @SerializedName("Trucker")
+    @SerializedName("trucker")
     var trucker: Trucker
 )
