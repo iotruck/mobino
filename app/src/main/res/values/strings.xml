@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Mobino</string>
+    <string name="user_name">Waldesio Pereira</string>
     <string name="title_name">IOTRUCK</string>
     <string name="btn_entrar">ENTRAR</string>
     <string name="stg_motoristas">MOTORISTAS</string>
