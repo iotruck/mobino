@@ -103,30 +103,6 @@ class DatabaseHandler(ctx: Context) : SQLiteOpenHelper(ctx, DB_NAME, null, DB_VE
         private val BIRTHDATE = "Birthdate"
         private val PHONENUMBER = "PhoneNumber"
 
-
     }
-
-//    @SuppressLint("Range")
-//    fun getAllTrucker(_id: Int): Trucker {
-//        val trucker = Trucker.createDefaultTrucker()
-//        val selectQuery = "SELECT * FROM $TABLE_NAME WHERE $ID = $_id"
-//        val cursor = database.rawQuery(selectQuery, null)
-//        val existencia : Boolean = cursor.moveToFirst()
-//        if (existencia){
-//            trucker.id = cursor.getInt(cursor.getColumnIndex(ID))
-//            trucker.name = cursor.getString(cursor.getColumnIndex(NAME))
-//            trucker.cpf = cursor.getString(cursor.getColumnIndex(CPF))
-//            trucker.cnh = cursor.getString(cursor.getColumnIndex(CNH))
-//            trucker.birthDate = cursor.getString(cursor.getColumnIndex(BIRTHDATE))
-//            trucker.phoneNumber = cursor.getString(cursor.getColumnIndex(PHONENUMBER))
-//        }
-//        cursor.close()
-//        return trucker
-//    }
-
-
-
-
-
 
 }
