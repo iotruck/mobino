@@ -12,12 +12,7 @@
         android:roundIcon="@mipmap/coruja"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ScheduleRActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="true"
-            android:label="@string/title_activity_schedule_ractivity"
-            android:theme="@style/AppTheme.Fullscreen" />
+
         <activity
             android:name=".feature.schedule.view.ScheduleActivity"
             android:exported="true" />

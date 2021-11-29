@@ -1,4 +1,4 @@
-package br.com.iotruck.mobino.feature.schedule.model
+package br.com.iotruck.mobino.model
 
 import com.google.gson.annotations.SerializedName
 

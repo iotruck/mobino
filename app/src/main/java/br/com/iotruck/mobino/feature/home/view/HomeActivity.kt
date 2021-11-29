@@ -19,12 +19,15 @@ class HomeActivity() : AppCompatActivity() {
 
     var trucker: Trucker = DatabaseHandler.getAllTrucker().get(0)
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val tvNameTrucker: TextView = findViewById(R.id.tv_trucker_name)
+        val tvNameTrucker: TextView = findViewById(R.id.tv_user_name)
         tvNameTrucker.text = trucker.name
+
+
 
     }
 

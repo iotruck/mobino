@@ -1,8 +1,9 @@
-package br.com.iotruck.mobino.feature.schedule.model
+package br.com.iotruck.mobino.model
 
 import br.com.iotruck.mobino.feature.login.model.Trucker
+import br.com.iotruck.mobino.model.enum.Status
 import com.google.gson.annotations.SerializedName
-import java.time.LocalDate
+
 
 data class Travel(
     @SerializedName("id")
@@ -22,5 +23,8 @@ data class Travel(
     @SerializedName("truck")
     var truck: Truck,
     @SerializedName("trucker")
-    var trucker: Trucker
+    var trucker: Trucker,
+    @SerializedName("status")
+    var status: Status,
+
 )

@@ -14,4 +14,11 @@
     <string name="tv_caminhoes">Trucks</string>
     <string name="tv_viagens">Travels</string>
     <string name="tv_proxima_viagem">NEXT TRAVEL</string>
+    <string name="tv_sua_viagem">Your Travel</string>
+    <string name="tv_solution">Mobino is the most solution for Iotruck truckers. If you have any
+        problem with your credentials, change in "my account" or contact the analyst who performed
+        your registration.
+          Welcome!</string>
+    <string name="tv_your_account">Profile</string>
+    <string name="tv_schedules">Schedules</string>
 </resources>
