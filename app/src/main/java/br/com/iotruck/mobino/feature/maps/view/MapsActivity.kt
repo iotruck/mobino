@@ -25,6 +25,9 @@ import com.google.android.gms.maps.model.*
 import android.view.View
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
+import br.com.iotruck.mobino.feature.maps.model.Travel
+import br.com.iotruck.mobino.feature.maps.services.MapsService
+import br.com.iotruck.mobino.feature.schedule.model.Location as LocationTravel
 import java.text.DecimalFormat
 
 
@@ -37,6 +40,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     private lateinit var locationCallback: LocationCallback
     private lateinit var locationRequest: LocationRequest
     private lateinit var mPositionMarker: Marker
+    private lateinit var travel: Travel
 
     private var locationUpdateState = false
     private val time: Long = 1000000000L
@@ -49,6 +53,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
     private var travelOn = true
     private var warningOn = false
+
+    private val mapsServices: MapsService = MapsService()
+
 
     companion object {
         private const val LOCATION_PERMISSION_REQUEST_CODE = 1
@@ -74,10 +81,35 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                 lastLocation = p0.lastLocation
                 println(lastLocation.toString())
                 setUpMap()
+                updateLocation(lastLocation)
             }
         }
 
+        travel = intent.getSerializableExtra("travel") as Travel
         createLocationRequest()
+        displayTravel()
+    }
+
+    fun updateLocation(location: Location) {
+        val locationTravel: LocationTravel = LocationTravel(
+            travel.currentTruckPosition.id,
+            "Teste",
+            location.latitude,
+            location.longitude
+        )
+        try {
+            mapsServices.updateLocation(locationTravel.id,locationTravel,this)
+        } catch (e: Exception) {
+            println(e.message)
+        }
+    }
+
+    fun displayTravel() {
+        val tvTravelCode: TextView = findViewById(R.id.tv_travel_code)
+        val tvTravelDestiny: TextView = findViewById(R.id.tv_travel_destiny)
+
+        tvTravelCode.text = travel.code
+        tvTravelDestiny.text = "DESTINO: ${travel.destiny.address}"
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -268,11 +300,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
         if (tvModal.text == "RETORNAR VIAGEM") {
             onResume()
+            visibilityModal(divModal)
         } else {
-            println("Redirecionar")
+            travel.status = "DONE"
+            mapsServices.finishTravel(travel.id,travel,this)
         }
-        onResume()
-        visibilityModal(divModal)
     }
 
     fun visibilityModal(m: ConstraintLayout) {

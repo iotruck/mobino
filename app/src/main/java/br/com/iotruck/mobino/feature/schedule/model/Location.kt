@@ -1,6 +1,7 @@
 package br.com.iotruck.mobino.feature.schedule.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Location(
     @SerializedName("id")
@@ -11,4 +12,4 @@ data class Location(
     var latitude : Double,
     @SerializedName("longitude")
     var longitude : Double
-)
+): Serializable

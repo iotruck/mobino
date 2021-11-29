@@ -2,7 +2,6 @@ package br.com.iotruck.mobino.feature.schedule.model
 
 import br.com.iotruck.mobino.feature.login.model.Trucker
 import com.google.gson.annotations.SerializedName
-import java.time.LocalDate
 
 data class Travel(
     @SerializedName("id")
