@@ -145,7 +145,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                             .position(currentLatLng)
                             .icon(BitmapDescriptorFactory.fromResource(R.mipmap.maps_location))
                     )
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 18f))
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17f))
                 } else {
                     mPositionMarker.position = currentLatLng
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17f))
