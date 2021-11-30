@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.iotruck.mobino">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/coruja"
@@ -12,7 +9,7 @@
         android:roundIcon="@mipmap/coruja"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".feature.loading.LoadingActivity"></activity>
         <activity
             android:name=".feature.schedule.view.ScheduleActivity"
             android:exported="true" />
@@ -36,5 +33,8 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>
