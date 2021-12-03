@@ -8,6 +8,7 @@ import br.com.iotruck.mobino.commons.builder.ServiceBuilder
 import br.com.iotruck.mobino.commons.network.NetworkStatus
 import br.com.iotruck.mobino.feature.login.model.Trucker
 import br.com.iotruck.mobino.feature.schedule.adapter.Adapter
+import br.com.iotruck.mobino.feature.schedule.adapter.AdapterFutures
 import br.com.iotruck.mobino.feature.schedule.model.Travel
 import br.com.iotruck.mobino.feature.schedule.services.interfaces.TravelServiceInterface
 import retrofit2.Call
@@ -19,8 +20,8 @@ class TravelService {
 
     private val retrofit = ServiceBuilder.buildServices(TravelServiceInterface::class.java)
 
-    fun getTravels(travels:MutableList<Travel>,trucker : Trucker ,newRecyclerView : RecyclerView,
-                   packgeContext : Context) {
+    fun getTravels(travels:MutableList<Travel>,trucker : Trucker ,newRecyclerViewToday : RecyclerView,
+                   newRecyclerViewFuture : RecyclerView,packgeContext : Context) {
 
         if (NetworkStatus.isConnected(packgeContext)){
             retrofit.getTravels(trucker.id).enqueue(
@@ -31,8 +32,10 @@ class TravelService {
 
                         if (response.isSuccessful){
                             travels.addAll(response.body() as MutableList<Travel>)
-                            newRecyclerView.adapter = Adapter(travels)
-                            newRecyclerView.layoutManager = LinearLayoutManager(packgeContext)
+                            newRecyclerViewToday.adapter = Adapter(travels)
+                            newRecyclerViewToday.layoutManager = LinearLayoutManager(packgeContext)
+                            newRecyclerViewFuture.adapter = AdapterFutures(travels)
+                            newRecyclerViewFuture.layoutManager = LinearLayoutManager(packgeContext)
                         }else {
                             Log.e(
                                 "ListError",

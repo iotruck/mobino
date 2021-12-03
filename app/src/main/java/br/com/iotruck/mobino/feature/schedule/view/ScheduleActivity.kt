@@ -18,7 +18,8 @@ class ScheduleActivity : AppCompatActivity() {
 
     val apiService = TravelService()
     val trucker : Trucker = DatabaseHandler.getAllTrucker().get(0)
-    private lateinit var newRecyclerView: RecyclerView
+    private lateinit var newRecyclerViewToday: RecyclerView
+    private lateinit var newRecyclerViewFuture: RecyclerView
     var travels : MutableList<Travel> = mutableListOf()
 
 
@@ -26,10 +27,9 @@ class ScheduleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_schedule)
 
-        newRecyclerView = findViewById(R.id.recyclerView)
-
-        apiService.getTravels(travels,trucker, newRecyclerView, this)
-        newRecyclerView.setHasFixedSize(true)
+        newRecyclerViewToday = findViewById(R.id.recyclerViewToday)
+        apiService.getTravels(travels, trucker, newRecyclerViewToday, newRecyclerViewFuture, this)
+        newRecyclerViewToday.setHasFixedSize(true)
 
     }
 
