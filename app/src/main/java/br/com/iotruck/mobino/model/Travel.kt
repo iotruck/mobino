@@ -3,6 +3,7 @@ package br.com.iotruck.mobino.model
 import br.com.iotruck.mobino.feature.login.model.Trucker
 import br.com.iotruck.mobino.model.enum.Status
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
 data class Travel(
@@ -25,6 +26,5 @@ data class Travel(
     @SerializedName("trucker")
     var trucker: Trucker,
     @SerializedName("status")
-    var status: Status,
-
-)
+    var status: Status
+): Serializable

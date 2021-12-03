@@ -170,7 +170,6 @@
             android:id="@+id/container_retomar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="20dp"
             android:background="@drawable/card_blue"
             android:padding="15dp"
             app:layout_constraintEnd_toEndOf="@id/container_next"
@@ -182,6 +181,7 @@
             <TextView
                 android:id="@+id/tv_retomar"
                 android:layout_width="wrap_content"
+                android:text="Retomar viagem"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="15sp"
@@ -192,13 +192,13 @@
                 android:id="@+id/tv_code_travel"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
-
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="@id/container_retomar"
                 app:layout_constraintTop_toBottomOf="@id/tv_retomar" />
 
             <ImageView
+                android:id="@+id/iv_play"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="100dp"
@@ -229,8 +229,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:text="Mobino é a solução dos caminhoneiros da Iotruck. Caso tenha algum problema com seus dados, altere em 'minha conta' ou contate o analista que realizou seu cadastro.
-            Seja bem vindo!"
+            android:text="@string/tv_solution"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"

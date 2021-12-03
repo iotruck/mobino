@@ -1,6 +1,7 @@
 package br.com.iotruck.mobino.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Truck(
     @SerializedName("id")
@@ -11,4 +12,4 @@ data class Truck(
     var truckBrand : String,
     @SerializedName("truckType")
     var truckType: TruckType
-)
+) : Serializable

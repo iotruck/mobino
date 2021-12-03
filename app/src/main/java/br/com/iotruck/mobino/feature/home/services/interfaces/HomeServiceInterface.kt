@@ -9,6 +9,6 @@ import retrofit2.http.Path
 interface HomeServiceInterface {
 
     @Headers("Content-Type: application/json")
-    @GET("travel/")
+    @GET("travel/trucker/latter/{id}")
     fun getLastTravel(@Path("id") id : Int): Call<Travel>
 }
