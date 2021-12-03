@@ -181,11 +181,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent=".36"
+        app:layout_constraintHeight_percent=".32"
         app:layout_constraintTop_toBottomOf="@id/container_headerHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:padding="30dp"
+        android:background="@color/white"
         android:id="@+id/container_next" >
 
         <TextView
@@ -263,7 +264,7 @@
         android:background="@mipmap/caminhao"
         android:padding="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".28"
+        app:layout_constraintHeight_percent=".32"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/container_next">

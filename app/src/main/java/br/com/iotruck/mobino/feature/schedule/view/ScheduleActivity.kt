@@ -26,10 +26,12 @@ class ScheduleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_schedule)
-
         newRecyclerViewToday = findViewById(R.id.recyclerViewToday)
+        newRecyclerViewFuture = findViewById(R.id.recyclerViewFutures)
+
         apiService.getTravels(travels, trucker, newRecyclerViewToday, newRecyclerViewFuture, this)
         newRecyclerViewToday.setHasFixedSize(true)
+        newRecyclerViewFuture.setHasFixedSize(true)
 
     }
 
