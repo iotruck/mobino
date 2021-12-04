@@ -90,6 +90,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         travel.status = Status.ACTIVE
         mapsServices.updateTravel(travel.id,travel,this)
 
+        timer.start()
+
         createLocationRequest()
         displayTravel()
     }
@@ -227,7 +229,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         if (!locationUpdateState) {
             startLocationUpdates()
         }
-        timer.start()
     }
 
     override fun onMarkerClick(p0: Marker?) = false
@@ -302,7 +303,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         val divModal: ConstraintLayout = findViewById(R.id.div_modal)
         val tvModal: TextView = findViewById(R.id.tv_modal)
 
-        if (tvModal.text == "RETORNAR VIAGEM") {
+        if (tvModal.text == "Viagem pausada") {
             onResume()
             visibilityModal(divModal)
         } else {
