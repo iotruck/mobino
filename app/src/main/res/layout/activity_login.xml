@@ -1,105 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/backgroundlogin"
+    android:padding="32dp"
     tools:context=".feature.main.view.MainActivity">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/backgroundlogin"
-        android:gravity="center"
-        android:padding="32dp">
+        android:background="@drawable/painel_login"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/painel_login"
-            android:orientation="vertical">
+            android:id="@+id/container_login"
+            >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="135dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="100dp"
-                android:orientation="vertical">
+                android:layout_marginTop="60dp"
+                android:src="@mipmap/coruja"
+                app:layout_constraintEnd_toEndOf="@id/container_login"
+                app:layout_constraintStart_toStartOf="@id/container_login"
+                app:layout_constraintTop_toTopOf="@id/container_login" />
 
-                <ImageView
-                    android:layout_width="135dp"
-                    android:layout_height="130dp"
-                    android:layout_gravity="center"
-                    android:src="@mipmap/coruja" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:text="@string/title_name"
-                    android:textAlignment="center"
-                    android:textColor="@color/blue_default"
-                    android:textSize="35sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/stg_motoristas"
-                    android:textAlignment="center"
-                    android:textColor="@color/orange_default"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_main_title_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="45dp"
-                android:orientation="vertical"
-                android:paddingLeft="50dp"
-                android:paddingRight="50dp">
+                android:layout_marginTop="40dp"
+                android:text="@string/title_name"
+                android:textAlignment="center"
+                android:textColor="@color/blue_default"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
 
-                <EditText
-                    android:id="@+id/et_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/input_login"
-                    android:hint="@string/ht_email"
-                    android:inputType="textEmailAddress"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/et_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="24dp"
-                    android:background="@drawable/input_login"
-                    android:hint="@string/ht_senha"
-                    android:inputType="textPassword"
-                    android:textAlignment="center" />
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_subtitle_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="45dp"
-                android:paddingLeft="64dp"
-                android:paddingRight="64dp">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/btn_login"
-                    android:onClick="login"
-                    android:text="@string/btn_entrar"
-                    android:textColor="@color/blue_default"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
+                android:text="@string/stg_motoristas"
+                android:textAlignment="center"
+                android:textColor="@color/orange_default"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_main_title_login" />
 
 
-        </LinearLayout>
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/input_login"
+                android:hint="@string/ht_email"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/container_login"
+                app:layout_constraintStart_toStartOf="@+id/container_login"
+                app:layout_constraintTop_toBottomOf="@+id/tv_subtitle_content"
+                app:layout_constraintWidth_percent="0.80" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_login"
+                android:hint="@string/ht_senha"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/container_login"
+                app:layout_constraintStart_toStartOf="@+id/container_login"
+                app:layout_constraintTop_toBottomOf="@+id/et_email"
+                app:layout_constraintWidth_percent="0.80" />
+
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="55dp"
+                android:background="@drawable/btn_login"
+                android:onClick="login"
+                android:text="@string/btn_entrar"
+                android:textColor="@color/blue_default"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/container_login"
+                app:layout_constraintStart_toStartOf="@+id/container_login"
+                app:layout_constraintTop_toBottomOf="@+id/et_password"
+                app:layout_constraintWidth_percent="0.70" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

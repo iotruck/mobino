@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.iotruck.mobino.R
-import br.com.iotruck.mobino.feature.schedule.model.Travel
+import br.com.iotruck.mobino.model.Travel
 
 class Adapter(private val newList : MutableList<Travel>) :
     RecyclerView.Adapter<Adapter.MyViewHolder>() {

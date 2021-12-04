@@ -8,6 +8,7 @@ import android.os.Handler
 import br.com.iotruck.mobino.R
 import br.com.iotruck.mobino.commons.db.DatabaseHandler
 import br.com.iotruck.mobino.feature.home.view.HomeActivity
+import br.com.iotruck.mobino.feature.loading.LoadingActivity
 import br.com.iotruck.mobino.feature.login.model.Trucker
 import br.com.iotruck.mobino.feature.login.view.LoginActivity
 
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             startLogin()
         } else {
             startActivity(
-                Intent(this, HomeActivity::class.java),
+                Intent(this, LoadingActivity::class.java),
                 ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
             )
         }
