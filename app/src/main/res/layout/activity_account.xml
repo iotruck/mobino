@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         app:layout_constraintHeight_percent=".55"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/blue_default"
+        android:background="@drawable/card_background_schedule"
         android:padding="20dp">
 
         <ImageView

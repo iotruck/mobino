@@ -26,7 +26,7 @@ class ScheduleActivity : AppCompatActivity() {
         newRecyclerViewFuture = findViewById(R.id.recyclerViewFutures)
 
         apiService.getTravels(travels, trucker, newRecyclerViewFuture,this,this)
-        newRecyclerViewFuture.setHasFixedSize(true)
+        newRecyclerViewFuture.setHasFixedSize(false)
 
     }
 

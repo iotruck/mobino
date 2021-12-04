@@ -54,7 +54,7 @@
             android:layout_height="110dp"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="@id/container_headerHome"
-            app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_trucker_name"
             app:layout_constraintEnd_toEndOf="@id/container_headerHome"
             app:layout_constraintStart_toStartOf="@id/container_headerHome">
 

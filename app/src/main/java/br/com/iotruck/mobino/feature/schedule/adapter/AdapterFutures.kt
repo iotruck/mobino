@@ -46,7 +46,7 @@ class AdapterFutures(private val newList : MutableList<Travel>) :
             holder.tvFutureTravelName.text = currentItem.code
             holder.tvAnalystNameFuture.text = currentItem.analyst.name
             holder.tvTravelDestinyFuture.text = currentItem.destiny.address
-            holder.tvDateTravel.text = LocalDate.parse(currentItem.dateTravel, f).toString()
+            holder.tvDateTravel.text = currentItem.dateTravel
     }
 
 
