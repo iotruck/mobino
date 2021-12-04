@@ -12,4 +12,4 @@ data class Location(
     var latitude : Double,
     @SerializedName("longitude")
     var longitude : Double
-) : Serializable
+): Serializable

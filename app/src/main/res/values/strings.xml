@@ -22,4 +22,9 @@
     <string name="tv_schedules">Viagens</string>
     <string name="splash_bem_vindo">Seja bem vindo!</string>
     <string name="testado">Não há viagens!</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="tv_entrar_contato">Entraremos em contato com</string>
+    <string name="title_activity_schedule_ractivity">ScheduleRActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

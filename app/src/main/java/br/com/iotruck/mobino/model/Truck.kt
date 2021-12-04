@@ -12,4 +12,4 @@ data class Truck(
     var truckBrand : String,
     @SerializedName("truckType")
     var truckType: TruckType
-) : Serializable
+): Serializable
