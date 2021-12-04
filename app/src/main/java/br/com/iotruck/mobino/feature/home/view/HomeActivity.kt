@@ -32,7 +32,7 @@ class HomeActivity() : AppCompatActivity() {
             val travel : Travel = intent.getSerializableExtra("lastTravel") as Travel
             tvCodeTravel.text = travel.code
         }else{
-            tvCodeTravel.text = "Não há viagens!"
+            tvCodeTravel.text = getString(R.string.testado)
             tvRetomar.text = ""
             ivBtn.isGone = true
         }
@@ -51,3 +51,4 @@ class HomeActivity() : AppCompatActivity() {
         startActivity(Intent(this, ScheduleActivity::class.java))
     }
 }
+
