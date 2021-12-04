@@ -144,7 +144,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:padding="30dp"
-        android:id="@+id/container_next" >
+        android:id="@+id/container_next"
+        >
 
         <TextView
             android:id="@+id/tv_sua_viagem"
@@ -176,7 +177,8 @@
             app:layout_constraintHeight_percent=".48"
             app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="@id/container_next"
-            app:layout_constraintTop_toBottomOf="@id/tv_viagem_proxima">
+            app:layout_constraintTop_toBottomOf="@id/tv_viagem_proxima"
+            >
 
             <TextView
                 android:id="@+id/tv_retomar"
@@ -206,7 +208,8 @@
                 app:layout_constraintBottom_toBottomOf="@id/container_retomar"
                 app:layout_constraintEnd_toEndOf="@id/container_retomar"
                 app:layout_constraintStart_toEndOf="@id/tv_retomar"
-                app:layout_constraintTop_toTopOf="@id/container_retomar" />
+                app:layout_constraintTop_toTopOf="@id/container_retomar"
+                android:onClick="goToTravel"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

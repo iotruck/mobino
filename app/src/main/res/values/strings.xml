@@ -13,6 +13,15 @@
     <string name="tv_caminhoes">Caminhões</string>
     <string name="tv_viagens">Viagens</string>
     <string name="tv_proxima_viagem">PRÓXIMA VIAGEM</string>
+    <string name="tv_sua_viagem">Sua Viagem</string>
+    <string name="tv_solution">Mobino é a solução dos caminhoneiros da Iotruck. Caso tenha algum
+        problema com seus dados, altere em "minha conta" ou contate o analista que realizou seu
+        cadastro.
+            Seja bem vindo!</string>
+    <string name="tv_your_account">Sua conta</string>
+    <string name="tv_schedules">Viagens</string>
+    <string name="splash_bem_vindo">Seja bem vindo!</string>
+    <string name="testado">Não há viagens!</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="tv_entrar_contato">Entraremos em contato com</string>
     <string name="title_activity_schedule_ractivity">ScheduleRActivity</string>
