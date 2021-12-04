@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.*
 import android.view.View
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
+import br.com.iotruck.mobino.feature.home.view.HomeActivity
 import br.com.iotruck.mobino.feature.maps.services.MapsService
 import br.com.iotruck.mobino.model.Travel
 import br.com.iotruck.mobino.model.enum.Status
@@ -88,7 +89,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
         travel = intent.getSerializableExtra("travel") as Travel
         travel.status = Status.ACTIVE
-        mapsServices.updateTravel(travel.id,travel,this)
+        mapsServices.updateTravel(travel.id, travel, this)
 
         timer.start()
 
@@ -99,12 +100,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     fun updateLocation(location: Location) {
         val locationTravel: LocationTravel = LocationTravel(
             travel.currentTruckPosition.id,
-            "Teste",
+            "currentLocation",
             location.latitude,
             location.longitude
         )
         try {
-            mapsServices.updateLocation(locationTravel.id,locationTravel,this)
+            mapsServices.updateLocation(locationTravel.id, locationTravel, this)
         } catch (e: Exception) {
             println(e.message)
         }
@@ -308,7 +309,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             visibilityModal(divModal)
         } else {
             travel.status = Status.DONE
-            mapsServices.updateTravel(travel.id,travel,this)
+            mapsServices.updateTravel(travel.id, travel, this)
+            startActivity(Intent(this, HomeActivity::class.java))
         }
     }
 
@@ -394,7 +396,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         val tvWarTimeCancel: TextView = findViewById(R.id.tv_war_time_cancel)
         val f = DecimalFormat("00")
 
-        if(initTimeWarning == 0L) {
+        if (initTimeWarning == 0L) {
             initTimeWarning = passTime
         }
         timeWarning = passTime - initTimeWarning
@@ -404,7 +406,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         val timeDisplay = 10 - sec.toInt()
         println("\n\n\n timeDisplay: $timeDisplay")
         println("\n\n\n timeWarning: $timeWarning")
-        if(timeDisplay >= 0) {
+        if (timeDisplay >= 0) {
             tvWarTimeCancel.text = " $timeDisplay "
         } else {
             warningOn = false
