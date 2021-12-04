@@ -35,8 +35,6 @@ class AdapterFutures(private val newList : MutableList<Travel>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = newList[position]
-        val date = SimpleDateFormat("dd/M/yyyy")
-        val currentDate = date.format(Date())
 
             holder.tvFutureTravelName.text = currentItem.code
             holder.tvAnalystNameFuture.text = currentItem.analyst.name

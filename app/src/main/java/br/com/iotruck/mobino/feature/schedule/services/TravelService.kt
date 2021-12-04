@@ -1,26 +1,34 @@
 package br.com.iotruck.mobino.feature.schedule.services
 
 import android.content.Context
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.iotruck.mobino.commons.builder.ServiceBuilder
 import br.com.iotruck.mobino.commons.network.NetworkStatus
 import br.com.iotruck.mobino.feature.login.model.Trucker
-import br.com.iotruck.mobino.feature.schedule.adapter.Adapter
 import br.com.iotruck.mobino.feature.schedule.adapter.AdapterFutures
 import br.com.iotruck.mobino.feature.schedule.model.Travel
 import br.com.iotruck.mobino.feature.schedule.services.interfaces.TravelServiceInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 
 class TravelService {
 
     private val retrofit = ServiceBuilder.buildServices(TravelServiceInterface::class.java)
 
-    fun getTravels(travels:MutableList<Travel>,trucker : Trucker ,newRecyclerViewToday : RecyclerView,
+    fun getTravels(travels:MutableList<Travel>,trucker : Trucker,
                    newRecyclerViewFuture : RecyclerView,packgeContext : Context) {
 
         if (NetworkStatus.isConnected(packgeContext)){
@@ -28,13 +36,23 @@ class TravelService {
 
                 object : Callback<MutableList<Travel>> {
 
-                    override fun onResponse(call: Call<MutableList<Travel>>,response: Response<MutableList<Travel>>){
+                    @RequiresApi(Build.VERSION_CODES.O)
+                    override fun onResponse(call: Call<MutableList<Travel>>, response: Response<MutableList<Travel>>){
 
                         if (response.isSuccessful){
+                            val f: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-M-dd")
+                            val z: ZoneId = ZoneId.of("America/Sao_Paulo")
+                            val today: LocalDate = LocalDate.now(z)
+                            val travelsFuture = mutableListOf<Travel>()
                             travels.addAll(response.body() as MutableList<Travel>)
-                            newRecyclerViewToday.adapter = Adapter(travels)
-                            newRecyclerViewToday.layoutManager = LinearLayoutManager(packgeContext)
-                            newRecyclerViewFuture.adapter = AdapterFutures(travels)
+
+                            for (t in travels) {
+                                if(!LocalDate.parse(t.dateTravel, f).equals(today) && LocalDate.parse(t.dateTravel, f).isAfter(today) ) {
+                                    travelsFuture.add(t)
+                                }
+                            }
+
+                            newRecyclerViewFuture.adapter = AdapterFutures(travelsFuture)
                             newRecyclerViewFuture.layoutManager = LinearLayoutManager(packgeContext)
                         }else {
                             Log.e(
