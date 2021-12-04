@@ -26,12 +26,9 @@ class Adapter(private val newList : MutableList<Travel>) :
         val currentItem = newList[position]
         val date = SimpleDateFormat("dd/M/yyyy")
         val currentDate = date.format(Date())
-
-        if(currentItem.dateTravel.equals(currentDate)) {
             holder.tvTodayTravelName.text = currentItem.code
             holder.tvAnalystNameToday.text = currentItem.analyst.name
             holder.tvTravelDestinyToday.text = currentItem.destiny.address
-        }
     }
 
     override fun getItemCount(): Int {

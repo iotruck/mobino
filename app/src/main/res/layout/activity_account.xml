@@ -10,7 +10,7 @@
         android:id="@+id/container_card_account"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent=".60"
+        app:layout_constraintHeight_percent=".55"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/blue_default"
         android:padding="20dp">
@@ -28,12 +28,12 @@
             android:layout_width="0dp"
             app:layout_constraintWidth_percent=".90"
             android:layout_height="0dp"
-            app:layout_constraintHeight_percent=".64"
+            app:layout_constraintHeight_percent=".85"
             app:layout_constraintTop_toTopOf="@id/container_card_account"
             app:layout_constraintBottom_toBottomOf="@id/container_card_account"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="40dp"
             android:padding="5dp"
             android:background="@drawable/painel_login">
 
@@ -60,11 +60,10 @@
                 app:layout_constraintTop_toBottomOf="@id/iv_truckdriver"/>
 
             <TextView
-                android:id="@+id/et_nameAccount"
+                android:id="@+id/tv_nameAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/orange_default"
-                android:text="Waldesio Pereira"
                 android:textSize="24sp"
                 android:gravity="center"
                 app:layout_constraintTop_toBottomOf="@id/tv_identificacao"/>
@@ -80,18 +79,18 @@
                 android:gravity="center"
                 android:paddingLeft="15dp"
                 android:layout_marginTop="20dp"
-                app:layout_constraintTop_toBottomOf="@id/et_nameAccount"
+                app:layout_constraintTop_toBottomOf="@id/tv_nameAccount"
                 app:layout_constraintStart_toStartOf="@id/card_trucker"/>
 
             <TextView
-                android:id="@+id/et_cpfAccount"
+                android:id="@+id/tv_cpfAccount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:gravity="center"
                 android:paddingLeft="15dp"
                 android:layout_marginTop="20dp"
-                app:layout_constraintTop_toBottomOf="@id/et_nameAccount"
+                app:layout_constraintTop_toBottomOf="@id/tv_nameAccount"
                 app:layout_constraintStart_toEndOf="@id/tv_cpf"/>
 
 
@@ -109,14 +108,14 @@
                 app:layout_constraintStart_toStartOf="@id/card_trucker"/>
 
             <TextView
-                android:id="@+id/et_birthAccount"
+                android:id="@+id/tv_birthAccount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:gravity="center"
                 android:paddingLeft="15dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/et_cpfAccount"
+                app:layout_constraintTop_toBottomOf="@id/tv_cpfAccount"
                 app:layout_constraintStart_toEndOf="@id/tv_nascimento"/>
 
             <TextView
@@ -133,16 +132,39 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_nascimento" />
 
             <TextView
-                android:id="@+id/et_liscenceAccount"
+                android:id="@+id/tv_liscenceAccount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:gravity="center"
                 android:paddingLeft="15dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/et_birthAccount"
+                app:layout_constraintTop_toBottomOf="@id/tv_birthAccount"
                 app:layout_constraintStart_toEndOf="@id/tv_carta"/>
 
+            <TextView
+                android:id="@+id/tv_telefone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="CONTATO:"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/card_trucker"
+                app:layout_constraintTop_toBottomOf="@id/tv_carta" />
+
+            <TextView
+                android:id="@+id/tv_phoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_liscenceAccount"
+                app:layout_constraintStart_toEndOf="@id/tv_telefone"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -184,7 +206,6 @@
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:background="@drawable/input_account"
-            android:textColorHint="@color/orange_default"
             android:inputType="textEmailAddress"
             android:enabled="false"
             android:textAlignment="center"
@@ -213,7 +234,6 @@
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:background="@drawable/input_account"
-            android:textColorHint="@color/orange_default"
             android:inputType="textEmailAddress"
             android:enabled="false"
             android:textAlignment="center"
