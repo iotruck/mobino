@@ -7,9 +7,9 @@ import androidx.core.content.ContextCompat.startActivity
 import br.com.iotruck.mobino.commons.builder.ServiceBuilder
 import br.com.iotruck.mobino.commons.network.NetworkStatus
 import br.com.iotruck.mobino.feature.home.view.HomeActivity
-import br.com.iotruck.mobino.feature.maps.model.Travel
+import br.com.iotruck.mobino.model.Travel
 import br.com.iotruck.mobino.feature.maps.services.interfaces.MapsServiceInterface
-import br.com.iotruck.mobino.feature.schedule.model.Location
+import br.com.iotruck.mobino.model.Location
 
 import retrofit2.Call
 import retrofit2.Callback
@@ -46,7 +46,7 @@ class MapsService {
         }
     }
 
-    fun finishTravel(id: Int, travel: Travel, pakageContext: Context) {
+    fun updateTravel(id: Int, travel: Travel, pakageContext: Context) {
         if(NetworkStatus.isConnected(pakageContext)){
 
             retrofit.putTravel(id, travel).enqueue(

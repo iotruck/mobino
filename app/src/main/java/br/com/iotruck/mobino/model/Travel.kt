@@ -1,6 +1,8 @@
 package br.com.iotruck.mobino.model
 
-import br.com.iotruck.mobino.feature.login.model.Trucker
+import br.com.iotruck.mobino.model.Trucker
+import br.com.iotruck.mobino.model.Analyst
+import br.com.iotruck.mobino.model.Location
 import br.com.iotruck.mobino.model.enum.Status
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

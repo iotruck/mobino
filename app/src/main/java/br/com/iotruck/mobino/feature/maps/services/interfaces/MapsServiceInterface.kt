@@ -1,7 +1,7 @@
 package br.com.iotruck.mobino.feature.maps.services.interfaces
 
-import br.com.iotruck.mobino.feature.maps.model.Travel
-import br.com.iotruck.mobino.feature.schedule.model.Location
+import br.com.iotruck.mobino.model.Travel
+import br.com.iotruck.mobino.model.Location
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Headers

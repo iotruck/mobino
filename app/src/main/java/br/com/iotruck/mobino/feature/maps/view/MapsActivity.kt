@@ -25,9 +25,10 @@ import com.google.android.gms.maps.model.*
 import android.view.View
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
-import br.com.iotruck.mobino.feature.maps.model.Travel
 import br.com.iotruck.mobino.feature.maps.services.MapsService
-import br.com.iotruck.mobino.feature.schedule.model.Location as LocationTravel
+import br.com.iotruck.mobino.model.Travel
+import br.com.iotruck.mobino.model.enum.Status
+import br.com.iotruck.mobino.model.Location as LocationTravel
 import java.text.DecimalFormat
 
 
@@ -86,6 +87,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         }
 
         travel = intent.getSerializableExtra("travel") as Travel
+        travel.status = Status.ACTIVE
+        mapsServices.updateTravel(travel.id,travel,this)
+
         createLocationRequest()
         displayTravel()
     }
@@ -302,8 +306,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             onResume()
             visibilityModal(divModal)
         } else {
-            travel.status = "DONE"
-            mapsServices.finishTravel(travel.id,travel,this)
+            travel.status = Status.DONE
+            mapsServices.updateTravel(travel.id,travel,this)
         }
     }
 
