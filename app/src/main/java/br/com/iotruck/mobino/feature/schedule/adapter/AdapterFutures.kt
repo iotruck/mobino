@@ -15,10 +15,10 @@ class AdapterFutures(private val newList : MutableList<Travel>) :
     RecyclerView.Adapter<AdapterFutures.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder  {
-        val itemViewToday = LayoutInflater.from(parent.context).inflate(R.layout.travels_component_future,
+        val itemViewFutures = LayoutInflater.from(parent.context).inflate(R.layout.travels_component_future,
             parent,false)
 
-        return MyViewHolder(itemViewToday)
+        return MyViewHolder(itemViewFutures)
     }
 
     override fun getItemCount(): Int {
@@ -27,9 +27,9 @@ class AdapterFutures(private val newList : MutableList<Travel>) :
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val tvDateTravel : TextView = itemView.findViewById(R.id.tv_travel_date)
-        val tvTodayTravelName : TextView = itemView.findViewById(R.id.tv_today_travel_name)
-        val tvAnalystNameToday : TextView = itemView.findViewById(R.id.tv_analyst_names_today)
-        val tvTravelDestinyToday : TextView = itemView.findViewById(R.id.tv_travel_destiny_today)
+        val tvFutureTravelName : TextView = itemView.findViewById(R.id.tv_future_travel_name)
+        val tvAnalystNameFuture : TextView = itemView.findViewById(R.id.tv_analyst_names_future)
+        val tvTravelDestinyFuture : TextView = itemView.findViewById(R.id.tv_travel_destiny_future)
     }
 
 
@@ -38,9 +38,9 @@ class AdapterFutures(private val newList : MutableList<Travel>) :
         val date = SimpleDateFormat("dd/M/yyyy")
         val currentDate = date.format(Date())
 
-            holder.tvTodayTravelName.text = currentItem.code
-            holder.tvAnalystNameToday.text = currentItem.analyst.name
-            holder.tvTravelDestinyToday.text = currentItem.destiny.address
+            holder.tvFutureTravelName.text = currentItem.code
+            holder.tvAnalystNameFuture.text = currentItem.analyst.name
+            holder.tvTravelDestinyFuture.text = currentItem.destiny.address
             holder.tvDateTravel.text = currentItem.dateTravel
     }
 
