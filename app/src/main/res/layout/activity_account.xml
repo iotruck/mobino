@@ -21,7 +21,8 @@
             android:layout_height="30dp"
             android:layout_margin="10dp"
             android:onClick="goToHome"
-            android:src="@mipmap/backarrow" />
+            android:src="@mipmap/backarrow"
+            tools:ignore="MissingConstraints" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/card_trucker"
@@ -64,7 +65,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/orange_default"
-                android:text="Waldesio Pereira"
                 android:textSize="24sp"
                 android:gravity="center"
                 app:layout_constraintTop_toBottomOf="@id/tv_identificacao"/>
@@ -170,7 +170,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="E-mail :"
-            app:layout_constraintTop_toTopOf=""
+            app:layout_constraintTop_toTopOf="@id/container_edit"
             app:layout_constraintStart_toStartOf="@id/tv_email"
             android:textColor="@color/orange_default"
             android:textSize="20sp" />
@@ -188,9 +188,9 @@
             android:inputType="textEmailAddress"
             android:enabled="false"
             android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf=""
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_email"/>
+            app:layout_constraintStart_toEndOf="@id/tv_email"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/tv_senha"
