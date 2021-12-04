@@ -1,11 +1,14 @@
 package br.com.iotruck.mobino.feature.schedule.services
 
+import android.app.Activity
 import android.content.Context
 import android.os.Build
 import android.util.Log
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.iotruck.mobino.R
 import br.com.iotruck.mobino.commons.builder.ServiceBuilder
 import br.com.iotruck.mobino.commons.network.NetworkStatus
 import br.com.iotruck.mobino.feature.login.model.Trucker
@@ -29,7 +32,7 @@ class TravelService {
     private val retrofit = ServiceBuilder.buildServices(TravelServiceInterface::class.java)
 
     fun getTravels(travels:MutableList<Travel>,trucker : Trucker,
-                   newRecyclerViewFuture : RecyclerView,packgeContext : Context) {
+                   newRecyclerViewFuture : RecyclerView,packgeContext : Context, activity : Activity) {
 
         if (NetworkStatus.isConnected(packgeContext)){
             retrofit.getTravels(trucker.id).enqueue(
@@ -47,13 +50,24 @@ class TravelService {
                             travels.addAll(response.body() as MutableList<Travel>)
 
                             for (t in travels) {
+
                                 if(!LocalDate.parse(t.dateTravel, f).equals(today) && LocalDate.parse(t.dateTravel, f).isAfter(today) ) {
                                     travelsFuture.add(t)
                                 }
-                            }
 
+                                if (LocalDate.parse(t.dateTravel, f).equals(today)) {
+                                    val travelTodayName : TextView = activity.findViewById(R.id.tv_today_travel_name)
+                                    val travelTodayAnalyst : TextView = activity.findViewById(R.id.tv_analyst_names_today)
+                                    val travelTodayDestiny : TextView = activity.findViewById(R.id.tv_travel_destiny_today)
+
+                                    travelTodayName.text = t.code
+                                    travelTodayAnalyst.text = t.analyst.name
+                                    travelTodayDestiny.text = t.destiny.address
+                                }
+                            }
                             newRecyclerViewFuture.adapter = AdapterFutures(travelsFuture)
                             newRecyclerViewFuture.layoutManager = LinearLayoutManager(packgeContext)
+
                         }else {
                             Log.e(
                                 "ListError",

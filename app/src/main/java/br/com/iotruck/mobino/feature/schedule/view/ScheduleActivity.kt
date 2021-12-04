@@ -25,7 +25,7 @@ class ScheduleActivity : AppCompatActivity() {
         setContentView(R.layout.activity_schedule)
         newRecyclerViewFuture = findViewById(R.id.recyclerViewFutures)
 
-        apiService.getTravels(travels, trucker, newRecyclerViewFuture,this)
+        apiService.getTravels(travels, trucker, newRecyclerViewFuture,this,this)
         newRecyclerViewFuture.setHasFixedSize(true)
 
     }

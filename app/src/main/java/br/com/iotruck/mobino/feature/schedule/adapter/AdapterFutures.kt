@@ -1,13 +1,18 @@
 package br.com.iotruck.mobino.feature.schedule.adapter
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import br.com.iotruck.mobino.R
 import br.com.iotruck.mobino.feature.schedule.model.Travel
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -33,13 +38,15 @@ class AdapterFutures(private val newList : MutableList<Travel>) :
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = newList[position]
+        val f: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/M/yyyy")
 
             holder.tvFutureTravelName.text = currentItem.code
             holder.tvAnalystNameFuture.text = currentItem.analyst.name
             holder.tvTravelDestinyFuture.text = currentItem.destiny.address
-            holder.tvDateTravel.text = currentItem.dateTravel
+            holder.tvDateTravel.text = LocalDate.parse(currentItem.dateTravel, f).toString()
     }
 
 
