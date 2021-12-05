@@ -1,7 +1,7 @@
 package br.com.iotruck.mobino.feature.schedule.services.interfaces
 
 
-import br.com.iotruck.mobino.feature.schedule.model.Travel
+import br.com.iotruck.mobino.model.Travel
 import retrofit2.Call
 import retrofit2.http.*
 

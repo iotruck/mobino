@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
+import android.window.SplashScreen
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import retrofit2.Call
@@ -13,6 +14,7 @@ import br.com.iotruck.mobino.commons.builder.ServiceBuilder
 import br.com.iotruck.mobino.commons.db.DatabaseHandler
 import br.com.iotruck.mobino.commons.network.NetworkStatus
 import br.com.iotruck.mobino.feature.home.view.HomeActivity
+import br.com.iotruck.mobino.feature.loading.LoadingActivity
 import br.com.iotruck.mobino.feature.login.model.Trucker
 import br.com.iotruck.mobino.feature.login.model.TruckerLogin
 import br.com.iotruck.mobino.feature.login.services.interfaces.TruckerServiceInterface
@@ -35,7 +37,7 @@ class TruckerService{
 
                         if (response.isSuccessful) {
                             DatabaseHandler.addTrucker(response.body() as Trucker)
-                            val redirect = Intent(pakageContext, HomeActivity::class.java)
+                            val redirect = Intent(pakageContext, LoadingActivity::class.java)
                             redirect.putExtra("truckerInfo", response.body())
                             startActivity(pakageContext, redirect, null)
                         } else {

@@ -9,7 +9,7 @@ import br.com.iotruck.mobino.R
 import br.com.iotruck.mobino.commons.db.DatabaseHandler
 import br.com.iotruck.mobino.feature.home.view.HomeActivity
 import br.com.iotruck.mobino.feature.login.model.Trucker
-import br.com.iotruck.mobino.feature.schedule.model.Travel
+import br.com.iotruck.mobino.model.Travel
 import br.com.iotruck.mobino.feature.schedule.services.TravelService
 
 class ScheduleActivity : AppCompatActivity() {
