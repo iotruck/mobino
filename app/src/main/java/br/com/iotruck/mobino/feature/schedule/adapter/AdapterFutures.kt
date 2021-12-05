@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import br.com.iotruck.mobino.R
-import br.com.iotruck.mobino.feature.schedule.model.Travel
+import br.com.iotruck.mobino.model.Travel
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.ZoneId

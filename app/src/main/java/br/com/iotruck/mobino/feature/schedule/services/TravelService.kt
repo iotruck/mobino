@@ -12,16 +12,13 @@ import br.com.iotruck.mobino.R
 import br.com.iotruck.mobino.commons.builder.ServiceBuilder
 import br.com.iotruck.mobino.commons.network.NetworkStatus
 import br.com.iotruck.mobino.feature.login.model.Trucker
-import br.com.iotruck.mobino.feature.schedule.adapter.Adapter
+import br.com.iotruck.mobino.feature.schedule.adapter.AdapterFutures
 import br.com.iotruck.mobino.model.Travel
 import br.com.iotruck.mobino.feature.schedule.services.interfaces.TravelServiceInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.DateFormat
-import java.text.SimpleDateFormat
 import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.*
