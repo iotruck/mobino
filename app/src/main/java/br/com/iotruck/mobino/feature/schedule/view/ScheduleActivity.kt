@@ -48,7 +48,13 @@ class ScheduleActivity : AppCompatActivity() {
     }
 
     fun goToHome(v: View){
-        startActivity(Intent(this, HomeActivity::class.java))
+        var entity = Intent(this, HomeActivity::class.java)
+
+        if(::travel.isInitialized){
+            entity.putExtra("lastTravel", travel)
+        }
+
+        startActivity(entity)
     }
 
 }

@@ -37,7 +37,6 @@ class AccountActivity : AppCompatActivity() {
         tvliscence.text = trucker.cnh
         tvCpf.text = trucker.cpf
 
-
     }
     fun goToHome(v: View){
         var entity = Intent(this, HomeActivity::class.java)
