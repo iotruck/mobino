@@ -46,11 +46,23 @@ class HomeActivity() : AppCompatActivity() {
     }
 
     fun goToAccount(v: View) {
-        startActivity(Intent(this, AccountActivity::class.java))
+        var entity = Intent(this, AccountActivity::class.java)
+
+        if(::travel.isInitialized){
+            entity.putExtra("travelToday", travel)
+        }
+
+        startActivity(entity)
     }
 
-    fun goToTravels(v: View) {
-        startActivity(Intent(this, ScheduleActivity::class.java))
+    fun goToSchedule(v: View) {
+        var entityToday = Intent(this, ScheduleActivity::class.java)
+
+        if(::travel.isInitialized){
+            entityToday.putExtra("travelToday", travel)
+        }
+
+        startActivity(entityToday)
     }
 
     fun goToTravel(v: View) {

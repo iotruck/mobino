@@ -24,4 +24,21 @@ Welcome!</string>
     <string name="tv_schedules">Schedules</string>
     <string name="splash_bem_vindo">Welcome!</string>
     <string name="testado">Dont has travel</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="tv_entrar_contato">We will contact</string>
+    <string name="title_activity_schedule_ractivity">ScheduleRActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="action_travel">Go to Travel</string>
+    <string name="nascimento">BIRTH DATE:</string>
+    <string name="contato">CONTACT:</string>
+    <string name="seu_acesso">CREDENTIALS</string>
+    <string name="password">Password :</string>
+    <string name="editar">EDIT</string>
+    <string name="programacao">" Scheduled for you"</string>
+    <string name="hoje">TODAY</string>
+    <string name="analista">ANALYST:</string>
+    <string name="destino">DESTINY:</string>
+    <string name="agenda">SCHEDULE</string>
+
 </resources>

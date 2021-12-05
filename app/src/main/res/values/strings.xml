@@ -27,4 +27,15 @@
     <string name="title_activity_schedule_ractivity">ScheduleRActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="action_travel">Ir para viagem</string>
+    <string name="nascimento">NASCIMENTO:</string>
+    <string name="contato">CONTATO:</string>
+    <string name="seu_acesso">SEU ACESSO</string>
+    <string name="password">Senha :</string>
+    <string name="editar">EDITAR</string>
+    <string name="programacao">Programação agendada para você</string>
+    <string name="hoje">HOJE</string>
+    <string name="analista">ANALISTA:</string>
+    <string name="destino">DESTINO:</string>
+    <string name="agenda">AGENDA</string>
 </resources>
