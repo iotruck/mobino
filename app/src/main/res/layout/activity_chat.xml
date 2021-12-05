@@ -45,7 +45,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="40dp"
-            android:text="FJ09982"
             android:textColor="@color/white"
             android:textSize="30dp"
             app:layout_constraintStart_toEndOf="@+id/iv_truck"
@@ -82,31 +81,12 @@
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/container_feed">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_message"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/card_message"
-                android:padding="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/container_scroll"
-                app:layout_constraintWidth_percent=".75">
-
-                <TextView
-                    android:id="@+id/tv_remetente"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Waldesio P."
-                    android:textColor="@color/orange_default"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/cl_message" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/container_message"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/container_scroll" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -121,26 +101,19 @@
         android:background="@drawable/painel_footer"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageView
-            android:id="@+id/mic"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@mipmap/mic"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/input_box"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:background="#D4D4D4"
-            app:layout_constraintStart_toEndOf="@+id/mic"
+            android:maxHeight="60dp"
+            android:minHeight="40dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/footer"
             app:layout_constraintWidth_percent=".70">
 
@@ -153,6 +126,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="10dp"
             android:background="@mipmap/send"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/input_box"
             app:layout_constraintTop_toTopOf="parent" />
 
