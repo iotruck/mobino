@@ -53,7 +53,7 @@
                 android:id="@+id/tv_identificacao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="MOTORISTA"
+                android:text="@string/stg_motoristas"
                 android:textColor="@color/blue_default"
                 android:textSize="15sp"
                 android:gravity="center"
@@ -99,7 +99,7 @@
                 android:id="@+id/tv_nascimento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NASCIMENTO:"
+                android:text="@string/nascimento"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:gravity="center"
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:paddingLeft="15dp"
-                android:text="CONTATO:"
+                android:text="@string/contato"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:layout_marginTop="10dp"
@@ -219,7 +219,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="Senha :"
+            android:text="@string/password"
             app:layout_constraintTop_toBottomOf="@id/tv_email"
             app:layout_constraintStart_toStartOf="@id/tv_email"
             android:textColor="@color/orange_default"
@@ -251,7 +251,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginRight="15dp"
             android:background="@color/orange_default"
-            android:text="Editar"/>
+            android:text="@string/editar"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

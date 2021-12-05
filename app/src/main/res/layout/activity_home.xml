@@ -182,7 +182,7 @@
             <TextView
                 android:id="@+id/tv_retomar"
                 android:layout_width="wrap_content"
-                android:text="Retomar viagem"
+                android:text="@string/action_travel"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="15sp"
