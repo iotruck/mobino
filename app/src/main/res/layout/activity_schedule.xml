@@ -84,7 +84,8 @@
                 android:src="@mipmap/relogio"
                 app:layout_constraintStart_toStartOf="@id/container_content"
                 app:layout_constraintTop_toTopOf="@id/container_content"
-                app:layout_constraintEnd_toStartOf="@id/tv_today"/>
+                app:layout_constraintEnd_toStartOf="@id/tv_today"
+                />
 
             <TextView
                 android:id="@+id/tv_today"
@@ -93,6 +94,7 @@
                 android:text="HOJE"
                 android:textColor="#F55100"
                 android:textSize="20sp"
+
                 app:layout_constraintStart_toEndOf="@id/iv_clock"
                 app:layout_constraintTop_toTopOf="@id/container_content"
                 android:layout_marginLeft="10dp"
@@ -100,6 +102,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 app:layout_constraintTop_toBottomOf="@id/tv_today"
                 app:layout_constraintEnd_toEndOf="@id/container_content"
                 app:layout_constraintStart_toStartOf="@id/container_content"
@@ -119,7 +122,8 @@
                     android:background="@drawable/card_travels"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    tools:ignore="MissingConstraints">
+                    tools:ignore="MissingConstraints"
+                    >
 
                     <TextView
                         android:id="@+id/tv_today_travel_name"
@@ -127,7 +131,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:padding="10dp"
-                        android:text="FJ0093764"
+
                         android:textColor="@color/white"
                         android:textSize="22sp"
                         app:layout_constraintTop_toTopOf="@id/container_today_cards"
@@ -151,7 +155,7 @@
                         android:id="@+id/tv_analyst_names_today"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Sandra Cunha, Paulo Alberto, João Antônio"
+
                         android:textColor="#B0B7E4"
                         android:textSize="15sp"
                         android:padding="5dp"
@@ -178,7 +182,7 @@
                         android:id="@+id/tv_travel_destiny_today"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Rua Sabugo de milho 456 - Lapa, São Paulo/SP - 06773645"
+
                         android:textColor="#B0B7E4"
                         android:textSize="15sp"
                         android:padding="5dp"
@@ -195,7 +199,8 @@
                         android:layout_gravity="right"
                         android:src="@mipmap/play"
                         app:layout_constraintTop_toBottomOf="@id/tv_travel_destiny_today"
-                        app:layout_constraintEnd_toEndOf="@id/container_today_cards"/>
+                        app:layout_constraintEnd_toEndOf="@id/container_today_cards"
+                        android:onClick="goToTravel"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

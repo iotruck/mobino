@@ -1,11 +1,17 @@
 package br.com.iotruck.mobino.feature.schedule.services
 
+import android.app.ActionBar
 import android.app.Activity
 import android.content.Context
 import android.os.Build
 import android.util.Log
+import android.util.TypedValue
+import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.isGone
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.iotruck.mobino.R
@@ -62,6 +68,20 @@ class TravelService {
                                     travelTodayDestiny.text = t.destiny.address
                                 }
                             }
+
+                            if(travelsFuture.size == travels.size){
+                                val ivClock : ImageView = activity.findViewById(R.id.iv_clock)
+                                val tvToday : TextView = activity.findViewById(R.id.tv_today)
+                                val containerToday : ConstraintLayout = activity.findViewById(R.id.container_today_cards)
+                                val containerRecycle : RecyclerView = activity.findViewById(R.id.recyclerViewFutures)
+                                val size : Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 500f, packgeContext.resources.displayMetrics).toInt()
+
+                                ivClock.isGone = true
+                                tvToday.isGone = true
+                                containerToday.isGone = true
+                                containerRecycle.layoutParams.height = size
+                            }
+
                             newRecyclerViewFuture.adapter = AdapterFutures(travelsFuture)
                             newRecyclerViewFuture.layoutManager = LinearLayoutManager(packgeContext)
 
