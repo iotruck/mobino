@@ -27,9 +27,11 @@ class HomeActivity() : AppCompatActivity() {
 
         val tvNameTrucker: TextView = findViewById(R.id.tv_user_name)
         tvNameTrucker.text = trucker.name
+
         var tvCodeTravel: TextView = findViewById(R.id.tv_code_travel)
         var tvRetomar: TextView = findViewById(R.id.tv_retomar)
         var ivBtn: ImageView = findViewById(R.id.iv_play)
+
         if (intent.getSerializableExtra("lastTravel") != null) {
             travel = intent.getSerializableExtra("lastTravel") as Travel
             tvCodeTravel.text = travel.code

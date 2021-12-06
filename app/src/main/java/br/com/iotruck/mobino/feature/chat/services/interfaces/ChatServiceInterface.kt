@@ -8,7 +8,7 @@ interface ChatServiceInterface {
 
     @Headers("Content-Type: application/json")
     @GET("feed/message/{id}")
-    fun getMessages(@Path("id") id: Int): Call<MutableList<Message>>
+    fun getMessages(@Path("id") id: Int, @Query("qtd") qtd: Int): Call<MutableList<Message>>
 
     @Headers("Content-Type: application/json")
     @POST("feed/message")

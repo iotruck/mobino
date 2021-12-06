@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.*
 import android.view.View
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
+import br.com.iotruck.mobino.feature.chat.view.ActivityChat
 import br.com.iotruck.mobino.feature.home.view.HomeActivity
 import br.com.iotruck.mobino.feature.maps.services.MapsService
 import br.com.iotruck.mobino.model.Travel
@@ -43,6 +44,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     private lateinit var locationRequest: LocationRequest
     private lateinit var mPositionMarker: Marker
     private lateinit var travel: Travel
+
 
     private var locationUpdateState = false
     private val time: Long = 1000000000L
@@ -422,6 +424,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             Intent(Intent.ACTION_DIAL, number)
         }
         startActivity(callIntent)
+    }
+
+    fun goToMessages(v:View){
+        var entity = Intent(this, ActivityChat::class.java)
+
+        if(::travel.isInitialized){
+            entity.putExtra("travel", travel)
+        }
+
+        startActivity(entity)
     }
 
 

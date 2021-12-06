@@ -31,11 +31,10 @@
         <ImageView
             android:id="@+id/iv_truck"
             android:layout_width="70dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="34dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
             android:src="@mipmap/truck"
-            app:layout_constraintHeight_percent=".70"
             app:layout_constraintStart_toEndOf="@id/iv_back"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -104,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <EditText
             android:id="@+id/input_box"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -115,9 +114,10 @@
             android:minHeight="40dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/footer"
-            app:layout_constraintWidth_percent=".70">
+            app:layout_constraintWidth_percent=".70"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         <ImageView
             android:id="@+id/btn_send_message"

@@ -29,6 +29,9 @@
             android:name=".feature.account.view.AccountActivity"
             android:exported="true" />
         <activity
+            android:name=".feature.chat.view.ActivityChat"
+            android:exported="true" />
+        <activity
             android:name=".feature.home.view.HomeActivity"
             android:exported="false" />
         <activity

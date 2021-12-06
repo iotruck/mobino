@@ -34,7 +34,7 @@ class ChatService {
     ) {
         if (NetworkStatus.isConnected(packageContext)) {
 
-            retrofit.getMessages(id).enqueue(
+            retrofit.getMessages(id, messages.size).enqueue(
 
                 object : Callback<MutableList<Message>> {
 
@@ -42,9 +42,12 @@ class ChatService {
                         call: Call<MutableList<Message>>, response: Response<MutableList<Message>>
                     ) {
                         if (response.isSuccessful) {
-                            messages.addAll(response.body() as MutableList<Message>)
-                            newMessagesRecyclerView.adapter = AdapterMessage(messages)
-                            newMessagesRecyclerView.layoutManager = LinearLayoutManager(packageContext)
+                            if(!response.body().isNullOrEmpty()) {
+                                var auxList : MutableList<Message> = response.body() as MutableList<Message>
+                                messages.addAll(response.body() as MutableList<Message>)
+                                newMessagesRecyclerView.adapter = AdapterMessage(messages)
+                                newMessagesRecyclerView.layoutManager = LinearLayoutManager(packageContext)
+                            }
                         } else {
                             Log.e(
                                 "MessageError",
