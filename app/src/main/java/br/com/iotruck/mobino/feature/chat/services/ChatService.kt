@@ -43,7 +43,6 @@ class ChatService {
                     ) {
                         if (response.isSuccessful) {
                             if(!response.body().isNullOrEmpty()) {
-                                var auxList : MutableList<Message> = response.body() as MutableList<Message>
                                 messages.addAll(response.body() as MutableList<Message>)
                                 newMessagesRecyclerView.adapter = AdapterMessage(messages)
                                 newMessagesRecyclerView.layoutManager = LinearLayoutManager(packageContext)
@@ -51,7 +50,8 @@ class ChatService {
                         } else {
                             Log.e(
                                 "MessageError",
-                                "Erro ao buscar mensagens - status: ${response.code()} errorBody: ${response.errorBody()} message: ${response.message()}"
+                                "Erro ao buscar mensagens - status: ${response.code()} " +
+                                        "errorBody: ${response.errorBody()} message: ${response.message()}"
                             )
                             Toast.makeText(
                                 packageContext,

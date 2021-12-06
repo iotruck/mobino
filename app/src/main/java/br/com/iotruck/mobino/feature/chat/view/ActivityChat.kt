@@ -22,37 +22,36 @@ class ActivityChat : AppCompatActivity() {
     val apiService = ChatService()
 
     var messages : MutableList<Message> = mutableListOf()
-    var qtdMessages : Int = 0
+
     private lateinit var newRecyclerView: RecyclerView
 
     lateinit var travel: Travel
-    lateinit var countDownTimer : CountDownTimer
 
+    val handle = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
         travel = intent.getSerializableExtra("travel") as Travel
 
+        postDelay()
+
         val tvCodeTravel : TextView = findViewById(R.id.tv_description_feed)
         tvCodeTravel.text = travel.code
 
         newRecyclerView = findViewById(R.id.container_message)
 
+    }
 
-            countDownTimer = object : CountDownTimer(30000, 2000){
-                override fun onFinish() {
-                    Toast.makeText(this@ActivityChat,"Errou",Toast.LENGTH_SHORT).show()
-                }
+    fun postDelay () {
 
-                override fun onTick(millisUntilFinished: Long) {
-                    apiService.getMessage(messages,newRecyclerView,travel.id, this@ActivityChat)
-                }
-            }.start()
+        handle.postDelayed(Runnable() {
+            run() {
+                apiService.getMessage(messages,newRecyclerView,travel.id, this)
 
-
-        qtdMessages = messages.size
-
+                postDelay()
+            }
+        }, 2000)
     }
 
     fun goToTravels(v: View) {
