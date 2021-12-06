@@ -40,8 +40,6 @@ class ActivityChat : AppCompatActivity() {
         newRecyclerView = findViewById(R.id.container_message)
 
 
-
-
             countDownTimer = object : CountDownTimer(30000, 2000){
                 override fun onFinish() {
                     Toast.makeText(this@ActivityChat,"Errou",Toast.LENGTH_SHORT).show()

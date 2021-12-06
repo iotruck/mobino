@@ -17,11 +17,11 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-            android:name=".ScheduleRActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="true"
-            android:label="@string/title_activity_schedule_ractivity"
-            android:theme="@style/AppTheme.Fullscreen" />
+        android:name=".ScheduleRActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:exported="true"
+        android:label="@string/title_activity_schedule_ractivity"
+        android:theme="@style/AppTheme.Fullscreen" />
         <activity
             android:name=".feature.schedule.view.ScheduleActivity"
             android:exported="true" />
@@ -40,12 +40,10 @@
         <activity
             android:name=".feature.maps.view.MapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps">
-        </activity>
+            android:label="@string/title_activity_maps"></activity>
         <activity
             android:name=".feature.loading.LoadingActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".feature.main.view.MainActivity"
             android:exported="true"
@@ -55,6 +53,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".feature.chat.job.ChatJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+
+        </service>
     </application>
 
 </manifest>
