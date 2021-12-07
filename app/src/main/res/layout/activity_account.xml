@@ -174,7 +174,7 @@
         android:id="@+id/tv_editesd"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="Seu acesso"
+        android:text="@string/seu_acesso"
         android:textColor="@color/blue_default"
         android:gravity="center"
         android:textSize="25sp"

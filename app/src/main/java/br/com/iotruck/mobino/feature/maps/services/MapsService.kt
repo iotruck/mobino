@@ -57,7 +57,7 @@ class MapsService {
                         if (response.isSuccessful) {
                             startActivity(pakageContext, Intent(pakageContext,HomeActivity::class.java), null)
                         } else {
-                            Toast.makeText(pakageContext, "Não foi possível finalizar, tente novamente", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(pakageContext, "Não foi possível atualizar, tente novamente", Toast.LENGTH_SHORT).show()
                         }
                     }
 

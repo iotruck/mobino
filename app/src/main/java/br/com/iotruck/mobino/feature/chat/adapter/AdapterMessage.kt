@@ -35,7 +35,7 @@ class AdapterMessage(private val newList: MutableList<Message>) :
         val currentItem = newList[position]
         holder.tvRemetente.text = currentItem.sender
         holder.tvContentMessage.text = currentItem.content
-        holder.tvDateMessage.text = currentItem.dateTimeMessage
+        holder.tvDateMessage.text = currentItem.dateTimeMessage.toString()
     }
 
 }

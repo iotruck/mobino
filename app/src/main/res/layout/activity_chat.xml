@@ -26,7 +26,8 @@
             android:src="@mipmap/backarrow"
             app:layout_constraintHeight_percent=".70"
             app:layout_constraintStart_toStartOf="@id/container_feed"
-            app:layout_constraintTop_toTopOf="@id/container_feed" />
+            app:layout_constraintTop_toTopOf="@id/container_feed"
+            android:onClick="goToMap"/>
 
         <ImageView
             android:id="@+id/iv_truck"
@@ -128,7 +129,8 @@
             android:background="@mipmap/send"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/input_box"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="sendMessage"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
