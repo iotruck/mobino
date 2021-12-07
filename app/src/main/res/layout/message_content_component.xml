@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_message"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".75"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/tv_remetente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Waldesio P."
+            android:textColor="@color/orange_default"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cl_message" />
+
+        <TextView
+            android:id="@+id/tv_content_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Lorem"
+            app:layout_constraintTop_toBottomOf="@+id/tv_remetente"
+            android:padding="15dp"
+            app:layout_constraintStart_toStartOf="@id/cl_message"
+            app:layout_constraintEnd_toEndOf="@id/cl_message"/>
+
+        <TextView
+            android:id="@+id/tv_date_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_content_message"
+            app:layout_constraintEnd_toEndOf="@id/cl_message"
+            android:text="22:23"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
