@@ -25,9 +25,11 @@ import java.time.ZoneId
 class ActivityChat : AppCompatActivity() {
     val apiService = ChatService()
 
+    var postStopped = false
+
     val trucker = DatabaseHandler.getAllTrucker().get(0)
 
-    var messages : MutableList<Message> = mutableListOf()
+    var messages: MutableList<Message> = mutableListOf()
 
     private lateinit var newRecyclerView: RecyclerView
 
@@ -40,7 +42,7 @@ class ActivityChat : AppCompatActivity() {
         setContentView(R.layout.activity_chat)
         travel = intent.getSerializableExtra("travel") as Travel
 
-        val tvCodeTravel : TextView = findViewById(R.id.tv_description_feed)
+        val tvCodeTravel: TextView = findViewById(R.id.tv_description_feed)
         tvCodeTravel.text = travel.code
 
         newRecyclerView = findViewById(R.id.container_message)
@@ -48,31 +50,47 @@ class ActivityChat : AppCompatActivity() {
         postDelay()
     }
 
-    fun postDelay () {
+    fun postDelay() {
         handle.postDelayed(Runnable() {
             run() {
-                apiService.getMessage(messages,newRecyclerView,travel.id, this)
+                apiService.getMessage(messages, newRecyclerView, travel.id, this)
+                if (!postStopped) {
+                    postDelay()
 
-                postDelay()
+                }
             }
         }, 2000)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun sendMessage(v : View){
-        val etMessage : EditText = findViewById(R.id.input_box)
-        val message = DtoMensagem(etMessage.text.toString(),trucker.name,travel)
-        apiService.postMessage(messages,message,newRecyclerView,this)
+    fun sendMessage(v: View) {
+        val etMessage: EditText = findViewById(R.id.input_box)
+        val message = DtoMensagem(etMessage.text.toString(), trucker.name, travel)
+        apiService.postMessage(messages, message, newRecyclerView, this)
         etMessage.text.clear()
     }
 
-    fun goToMap(v : View) {
+    fun goToMap(v: View) {
+        postStopped = true
+
         var entity = Intent(this, MapsActivity::class.java)
 
         entity.putExtra("travel", travel)
 
         startActivity(entity)
 
+    }
+
+    override fun onBackPressed() {
+        postStopped = true
+
+        var entity = Intent(this, MapsActivity::class.java)
+
+        entity.putExtra("travel", travel)
+
+        startActivity(entity)
+
+        super.onBackPressed()
     }
 
 }

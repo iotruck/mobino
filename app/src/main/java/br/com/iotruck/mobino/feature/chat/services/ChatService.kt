@@ -25,7 +25,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 
 class ChatService {
 
@@ -48,6 +50,7 @@ class ChatService {
                     ) {
                         if (response.isSuccessful) {
                             if(!response.body().isNullOrEmpty()) {
+
                                 messages.addAll(response.body() as MutableList<Message>)
                                 newMessagesRecyclerView.adapter = AdapterMessage(messages)
                                 newMessagesRecyclerView.layoutManager = LinearLayoutManager(packageContext)
@@ -96,8 +99,9 @@ class ChatService {
                     @RequiresApi(Build.VERSION_CODES.O)
                     override fun onResponse(call: Call<Void>, response: Response<Void>) {
                         if (response.isSuccessful) {
+                            val f: DateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm")
                             val z: ZoneId = ZoneId.of("America/Sao_Paulo")
-                            val today: LocalDate = LocalDate.now(z)
+                            val today: LocalDateTime = LocalDateTime.now(z)
                             val message = Message(dtoMensagem.content,today.toString(),dtoMensagem.sender, dtoMensagem.travel)
                             messages.add(message)
                             newMessagesRecyclerView.adapter = AdapterMessage(messages)
