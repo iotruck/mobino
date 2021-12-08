@@ -102,7 +102,7 @@ class ChatService {
                             val f: DateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm")
                             val z: ZoneId = ZoneId.of("America/Sao_Paulo")
                             val today: LocalDateTime = LocalDateTime.now(z)
-                            val message = Message(dtoMensagem.content,today.toString(),dtoMensagem.sender, dtoMensagem.travel)
+                            val message = Message(dtoMensagem.content,today.format(f).toString(),dtoMensagem.sender, dtoMensagem.travel)
                             messages.add(message)
                             newMessagesRecyclerView.adapter = AdapterMessage(messages)
                             newMessagesRecyclerView.layoutManager = LinearLayoutManager(packageContext)
