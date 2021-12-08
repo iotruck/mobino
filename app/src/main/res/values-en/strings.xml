@@ -23,9 +23,9 @@ Welcome!</string>
     <string name="tv_your_account">Profile</string>
     <string name="tv_schedules">Schedules</string>
     <string name="splash_bem_vindo">Welcome!</string>
-    <string name="testado">Dont has travel</string>
+    <string name="testado">No travel avaible. </string>
     <string name="title_activity_maps">MapsActivity</string>
-    <string name="tv_entrar_contato">We will contact</string>
+    <string name="tv_entrar_contato">We will return your contact</string>
     <string name="title_activity_schedule_ractivity">ScheduleRActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
@@ -40,5 +40,6 @@ Welcome!</string>
     <string name="analista">ANALYST:</string>
     <string name="destino">DESTINY:</string>
     <string name="agenda">SCHEDULE</string>
+    <string name="tempo_viagem">Journey Time</string>
 
 </resources>
